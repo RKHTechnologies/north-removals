@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Router>
+        <Header />
         <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}`} component={Home} />
         </Switch>
-        <Header />
       </Router>
       <GlobalStyle />
     </>

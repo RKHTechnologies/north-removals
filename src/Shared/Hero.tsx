@@ -1,24 +1,10 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-import highRopes from '../img/cub-high-ropes.jpg';
-import canoes from '../img/canoes.jpg';
-import expedition from '../img/explorer-expedition.jpg';
-import obstacle from '../img/explorer-teamwork-3.jpg';
-import beavers from '../img/beavers-and-leader.jpg';
-import cubs from '../img/cubs-group.jpg';
-import scouts from '../img/scouts-life-jackets.jpg';
-import kayaking from '../img/kayaking.jpg';
+import removals1 from '../img/removals.jpg';
 
 const images = {
-    'highRopes': highRopes,
-    'canoes': canoes,
-    'expedition': expedition,
-    'obstacle': obstacle,
-    'beavers': beavers,
-    'cubs': cubs,
-    'scouts': scouts,
-    'kayaking': kayaking,
+    'removals1': removals1,
 };
 
 interface HeroProps {
@@ -41,7 +27,7 @@ const HeroBanner = styled.div`
 
 
 interface IProps {
-    image: 'highRopes' | 'canoes' | 'expedition' | 'obstacle' | 'beavers' | 'cubs' | 'scouts' | 'kayaking';
+    image: 'removals1';
     small?: boolean;
     imageHeight?: string;
 }
