@@ -1,30 +1,31 @@
 {
   "files": {
     "main.css": "/north-removals/static/css/main.b74381ee.chunk.css",
-    "main.js": "/north-removals/static/js/main.a3bc620c.chunk.js",
-    "main.js.map": "/north-removals/static/js/main.a3bc620c.chunk.js.map",
+    "main.js": "/north-removals/static/js/main.31d7b8df.chunk.js",
+    "main.js.map": "/north-removals/static/js/main.31d7b8df.chunk.js.map",
     "runtime-main.js": "/north-removals/static/js/runtime-main.9f793428.js",
     "runtime-main.js.map": "/north-removals/static/js/runtime-main.9f793428.js.map",
-    "static/js/2.0d68f252.chunk.js": "/north-removals/static/js/2.0d68f252.chunk.js",
-    "static/js/2.0d68f252.chunk.js.map": "/north-removals/static/js/2.0d68f252.chunk.js.map",
+    "static/js/2.4e3049f8.chunk.js": "/north-removals/static/js/2.4e3049f8.chunk.js",
+    "static/js/2.4e3049f8.chunk.js.map": "/north-removals/static/js/2.4e3049f8.chunk.js.map",
     "index.html": "/north-removals/index.html",
-    "precache-manifest.1ec94378fa6cdda31bf1828d2192659d.js": "/north-removals/precache-manifest.1ec94378fa6cdda31bf1828d2192659d.js",
+    "precache-manifest.1a0fb8e08e225e1a4fc4d56d23e08803.js": "/north-removals/precache-manifest.1a0fb8e08e225e1a4fc4d56d23e08803.js",
     "service-worker.js": "/north-removals/service-worker.js",
     "static/css/main.b74381ee.chunk.css.map": "/north-removals/static/css/main.b74381ee.chunk.css.map",
-    "static/js/2.0d68f252.chunk.js.LICENSE.txt": "/north-removals/static/js/2.0d68f252.chunk.js.LICENSE.txt",
+    "static/js/2.4e3049f8.chunk.js.LICENSE.txt": "/north-removals/static/js/2.4e3049f8.chunk.js.LICENSE.txt",
     "static/media/House-Removals.jpg": "/north-removals/static/media/House-Removals.f1088437.jpg",
     "static/media/RKHT_logo.png": "/north-removals/static/media/RKHT_logo.8c8521de.png",
     "static/media/box-tape.jpg": "/north-removals/static/media/box-tape.10092ccb.jpg",
     "static/media/box.jpg": "/north-removals/static/media/box.fecc2428.jpg",
     "static/media/desk.jpg": "/north-removals/static/media/desk.55a5b36f.jpg",
+    "static/media/logo.png": "/north-removals/static/media/logo.03e6ad12.png",
     "static/media/logo_noText.png": "/north-removals/static/media/logo_noText.2fc9c057.png",
     "static/media/removals.jpg": "/north-removals/static/media/removals.87c62d13.jpg",
     "static/media/wrapped-sofa.jpg": "/north-removals/static/media/wrapped-sofa.b808918b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9f793428.js",
-    "static/js/2.0d68f252.chunk.js",
+    "static/js/2.4e3049f8.chunk.js",
     "static/css/main.b74381ee.chunk.css",
-    "static/js/main.a3bc620c.chunk.js"
+    "static/js/main.31d7b8df.chunk.js"
   ]
 }
