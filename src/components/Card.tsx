@@ -49,6 +49,8 @@ const PrimaryText = styled.div`
   border-bottom: 2px solid ${colours.light};
   padding: 3px 0;
   z-index: 1;
+  text-align: center;
+  max-width: 80%;
 `;
 
 const SecondaryText = styled.div`
