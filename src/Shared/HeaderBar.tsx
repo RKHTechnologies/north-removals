@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from '../logo.svg';
 import styled from 'styled-components';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
 import { useHistory } from 'react-router-dom';
@@ -13,24 +12,32 @@ interface menuProps {
 }
 
 const HeaderNav = styled.div`
-    position: ${(p: IProps) => p.stickyHeader ? "fixed" : "absolute"};
-    top: ${(p: IProps) => p.stickyHeader ? "0" : "100vh"};
+    position: absolute;
+    top: ${(p: IProps) => p.stickyHeader ? "150px" : "100vh"};
     width: 100%;
-    height: 100px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: ${colours.light};
+    background: ${colours.secondary};
+    z-index: 1;
+    border-bottom: 3px solid ${colours.dark};
+    border-top: 3px solid ${colours.dark};
+
+    @media(max-width: ${SharedSettings.mobile}) {
+        top: 0;
+        background: transparent;
+        border-color: transparent;
+    }
 `;
 
 const HeaderNavContainer = styled.div` 
     width: 100%;
     max-width: ${SharedSettings.maxWidth};
-    height: 80px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: ${colours.light};
     color: ${colours.dark};
     z-index: 1;
     transition: height 0.3s ease;
@@ -49,30 +56,26 @@ const HeaderNavContainer = styled.div`
     }
 `;
 
-const Logo = styled.img`
-    cursor: pointer;
-`;
-
-
 const HeaderButton = styled.button`
     height: 100%;
     background: transparent;
-    color: ${colours.Purple};
+    color: ${colours.dark};
     cursor: pointer;
-    padding: 15px 14px;
+    padding: 11px 14px;
     border: none;
     border-bottom: 2px solid transparent;
     border-top: 2px solid transparent;
-    font-weight: 500;
+    font-size: 1.2em;
+    font-weight: 600;
     text-decoration: none;
     
     &:hover {
-      border-bottom-color: ${colours.primary};
+      background: #E7CC92;
     }
 
     &:focus {  
       outline: 0;
-      background: #eaeaea;
+      background: #E7CC92;
     }
  
     &:last-child {
@@ -85,6 +88,7 @@ const NavItemsRightContainer = styled.div`
     justify-content: center;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin: auto;
 
     @media( max-width: 1100px ) {
         flex-direction: column;
@@ -95,11 +99,11 @@ const NavItemsRightContainer = styled.div`
         top: 100px;
         left: 20px;
         right: 20px;
-        background: ${colours.Purple};
+        background: ${colours.secondary};
 
 
         ${HeaderButton} {
-            color: ${colours.light};
+            color: ${colours.dark};
             text-align: center;
             font-size: 1.4em;
             padding: 0 14px;
@@ -120,7 +124,7 @@ const Burger = styled.div`
     height: 4px;
     width: 40px;
     border-radius: 2px;
-    background: ${(p: menuProps) => p.menuOpen ? colours.light : colours.primary};
+    background: ${(p: menuProps) => p.menuOpen ? colours.dark : colours.dark};
     transition: all 0.5s ease;
     transition-property: height, width, transform;
     position: absolute;
@@ -134,7 +138,7 @@ const Burger = styled.div`
         height: 4px;
         width: 40px;
         border-radius: 2px;
-        background: ${(p: menuProps) => p.menuOpen ? colours.light : "inherit"};
+        background: ${(p: menuProps) => p.menuOpen ? colours.dark : "inherit"};
         transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
@@ -154,7 +158,7 @@ const Burger = styled.div`
 const BurgerContainer = styled.div`
     height: 100px;
     width: 100px;
-    background: ${(p: menuProps) => p.menuOpen ? colours.Purple : "transparent"};
+    background: ${(p: menuProps) => p.menuOpen ? colours.secondary : "transparent"};
     position: relative;
     align-self: flex-end;
     cursor: pointer;
@@ -186,19 +190,15 @@ const HeaderBar: React.FC<IProps> = ({ stickyHeader }: IProps) => {
     return (
         <HeaderNav stickyHeader={stickyHeader}>
             <HeaderNavContainer>
-                <Logo src={logo} alt="2nd 60th Leicester Scouts" onClick={() => handleNav("")} />
                 <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
                 <NavItemsRightContainer menuOpen={menuOpen}>
                     <HeaderButton onClick={() => handleNav("")}>Home</HeaderButton>
                     <HeaderButton onClick={() => handleNav("/about")}>About Us</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/beavers")}>Beavers</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/cubs")}>Cubs</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/scouts")}>Scouts</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/explorers")}>Explorers</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/ourCalendar")}>Our Calendar</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/joinUs")}>Join Us</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/documents")}>Useful Documents</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/shop")}>Scout Shop</HeaderButton>
+                    <HeaderButton onClick={() => handleNav("/beavers")}>Home Moves</HeaderButton>
+                    <HeaderButton onClick={() => handleNav("/beavers")}>Office Removals</HeaderButton>
+                    <HeaderButton onClick={() => handleNav("/beavers")}>Packing Service</HeaderButton>
+                    <HeaderButton onClick={() => handleNav("/beavers")}>Packaging Materials</HeaderButton>
+                    <HeaderButton onClick={() => handleNav("/beavers")}>Contact Us</HeaderButton>
                 </NavItemsRightContainer>
             </HeaderNavContainer>
         </HeaderNav>

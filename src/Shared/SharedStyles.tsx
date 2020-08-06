@@ -4,6 +4,7 @@ interface ColoursProps {
     light: string,
     dark: string,
     primary: string,
+    secondary: string,
     Purple: string,
     Teal: string,
     Red: string,
@@ -23,6 +24,7 @@ export const colours: ColoursProps = {
     light: "#f5f2eb",
     dark: "#3f3c36",
     primary: "#34B8BD",
+    secondary: "#DCB663",
         
     Purple: "#7414DC",
     Teal: "#00A794",
@@ -66,7 +68,10 @@ export const PageBodyContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  /* overflow-y: scroll; */
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    top: 100px;
+  }
 `;
 
 export const Section = styled.div`

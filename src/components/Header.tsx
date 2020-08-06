@@ -2,12 +2,18 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
 import logo from '../img/logo_noText.png';
+import { useHistory } from 'react-router-dom';
+import HeaderBar from '../Shared/HeaderBar';
 
 const HeaderStrip = styled.div`
   position: absolute;
   width: 100%;
   height: 150px;
   background: ${colours.primary};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    height: 100px;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -17,6 +23,10 @@ const HeaderContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'phone logo email';
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    grid-template-areas: 'logo . .';
+  }
 `;
 
 const Phone = styled.div`
@@ -26,6 +36,10 @@ const Phone = styled.div`
   justify-content: center;
   font-size: 2em;
   color: #f5f2eb;
+  
+  @media(max-width: ${SharedSettings.mobile}) {
+    display: none;
+  }
 `;
 
 const Email = styled(Phone)`
@@ -38,16 +52,30 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 const Logo = styled.div`
-  /* grid-area: logo; */
   background: url(${logo});
   background-size: contain;
   width: 130px;
   min-width: 130px;
   height: 119px;
   margin-right: 10px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    width: 94px;
+    min-width: 94px;
+    height: 86px;
+    margin-left: 40px;
+  }
+
+  @media(max-width: 420px) {
+    width: 72px;
+    min-width: 72px;
+    height: 66px;
+    margin-left: 5px;
+  }
 `;
 
 const LogoText = styled.p`
@@ -60,19 +88,30 @@ const LogoText = styled.p`
   display: flex;
   align-items: center;
   letter-spacing: 4px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    font-size: 1.8em;
+  }
+
+  @media(max-width: 420px) {
+    font-size: 1.3em;
+  }
 `;
 
 const Header: FC = () => {
+  const history = useHistory();
+
   return (
     <HeaderStrip>
       <HeaderContainer>
         <Phone>07885 575 400</Phone>
-        <LogoContainer>
+        <LogoContainer onClick={() => history.push(`${process.env.PUBLIC_URL}`)}>
           <Logo />
           <LogoText>NORTH REMOVALS</LogoText>
         </LogoContainer>
         <Email>enquiries@northremovals.co.uk</Email>
       </HeaderContainer>
+      <HeaderBar stickyHeader />
     </HeaderStrip>
   )
 }
