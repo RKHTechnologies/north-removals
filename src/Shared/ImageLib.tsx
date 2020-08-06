@@ -4,8 +4,10 @@ import boxTape from '../img/box-tape.jpg';
 import homeMoves from '../img/House-Removals.jpg';
 import wrappedSofa from '../img/wrapped-sofa.jpg';
 import desk from '../img/desk.jpg';
+import rkh from '../img/RKHT_logo.png';
 
 const Images = {
+  'rkh': rkh,
   'removals': removals,
   'box': box,
   'boxTape': boxTape,
@@ -14,6 +16,6 @@ const Images = {
   'desk': desk,
 }
 
-export type imageLib = 'removals' | 'box' | 'boxTape' | 'homeMoves' | 'wrappedSofa' | 'desk';
+export type imageLib = 'rkh' | 'removals' | 'box' | 'boxTape' | 'homeMoves' | 'wrappedSofa' | 'desk';
 
 export default Images;

@@ -76,12 +76,14 @@ export const PageBodyContainer = styled.div`
 
 interface SectionProps {
   fullwidth?: boolean;
+  lastItem?: boolean;
 }
 
 export const Section = styled.div`
   width: 100%;
   min-height: 200px;
   padding: ${(p: SectionProps) => p.fullwidth ? "20px 0 100px" : "20px 30px 100px"};
+  padding-bottom: ${(p: SectionProps) => p.lastItem ? "0 !important" : null};
   box-sizing: border-box;
   display: flex;
   justify-content: center;

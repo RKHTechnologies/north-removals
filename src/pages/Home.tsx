@@ -4,6 +4,7 @@ import { PageBodyContainer, Section } from '../Shared/SharedStyles';
 import ProductCards from '../components/ProductCards';
 import JumboCard from '../components/JumboCard';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 const Home: FC = () => {
   return (
@@ -36,11 +37,11 @@ const Home: FC = () => {
           </div>
         </Section>
 
-        <Section id="Contact" fullwidth> 
+        <Section id="Contact" fullwidth lastItem> 
             <Contact />
         </Section>
 
-        {/* <Footer /> */}
+        <Footer />
       </PageBodyContainer>
       
     </>
