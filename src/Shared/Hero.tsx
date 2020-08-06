@@ -1,11 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-
-import removals1 from '../img/removals.jpg';
-
-const images = {
-    'removals1': removals1,
-};
+import Images, {imageLib} from './ImageLib';
 
 interface HeroProps {
     imageUrl: string;
@@ -27,14 +22,14 @@ const HeroBanner = styled.div`
 
 
 interface IProps {
-    image: 'removals1';
+    image: imageLib;
     small?: boolean;
     imageHeight?: string;
 }
 
 const Hero: FC<IProps> = ({image, small, imageHeight}: IProps) => {
     return (
-        <HeroBanner imageUrl={images[image]} small={small} imageHeight={imageHeight} />
+        <HeroBanner imageUrl={Images[image]} small={small} imageHeight={imageHeight} />
     );
 }
 

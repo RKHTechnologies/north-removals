@@ -20,7 +20,7 @@ interface ColoursProps {
 }
 
 export const colours: ColoursProps = {
-    light: "#FFF",
+    light: "#f5f2eb",
     dark: "#3f3c36",
     primary: "#34B8BD",
         
@@ -43,11 +43,13 @@ export const colours: ColoursProps = {
 interface SettingsProps {
     maxWidth: string;
     maxWidthHalf: string;
+    mobile: string;
 }
 
 export const SharedSettings: SettingsProps = {
     maxWidth: "1400px",
     maxWidthHalf: "700px",
+    mobile: "1100px",
 }
 
 export const PageContainer = styled.div`
@@ -60,11 +62,32 @@ export const PageContainer = styled.div`
 
 export const PageBodyContainer = styled.div`
   position: absolute;
-  top: 100px;
+  top: 150px;
   bottom: 0;
   left: 0;
   right: 0;
   /* overflow-y: scroll; */
+`;
+
+export const Section = styled.div`
+  width: 100%;
+  min-height: 200px;
+  padding: 20px 30px 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  div.wrapper {
+    width: 96%;
+    max-width: ${SharedSettings.maxWidth};
+    /* margin-left: 50px; */
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 20px 0 50px;
+  }
 `;
 
 

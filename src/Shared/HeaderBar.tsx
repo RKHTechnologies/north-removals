@@ -45,7 +45,7 @@ const HeaderNavContainer = styled.div`
     }
 
     @media(min-width: ${SharedSettings.maxWidth}) {
-        left: calc(50% - ${SharedSettings.maxWidthHalf});    
+        left: calc(50% - ${SharedSettings.maxWidth});    
     }
 `;
 

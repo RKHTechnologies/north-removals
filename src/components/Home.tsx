@@ -1,13 +1,27 @@
 import React, { FC } from 'react';
 import Hero from '../Shared/Hero';
-import { PageContainer } from '../Shared/SharedStyles';
+import { PageBodyContainer, Section } from '../Shared/SharedStyles';
+import ProductCards from './ProductCards';
 
 const Home: FC = () => {
   return (
     <>
-      <PageContainer>
-        <Hero image="removals1" small />
-      </PageContainer>
+      <PageBodyContainer>
+        <Hero image="removals" />
+
+        <Section id="about">
+          <div className="wrapper">
+
+            About section
+          </div>
+        </Section>
+
+        <Section id="products">
+        <div className="wrapper">
+          <ProductCards />
+        </div>
+      </Section>
+      </PageBodyContainer>
       
     </>
   );
