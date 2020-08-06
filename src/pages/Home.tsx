@@ -3,6 +3,7 @@ import Hero from '../Shared/Hero';
 import { PageBodyContainer, Section } from '../Shared/SharedStyles';
 import ProductCards from '../components/ProductCards';
 import JumboCard from '../components/JumboCard';
+import Contact from '../components/Contact';
 
 const Home: FC = () => {
   return (
@@ -25,8 +26,18 @@ const Home: FC = () => {
 
         <Section id="quote">
           <div className="wrapper">
-            <JumboCard title="Get a free, no obligation quote today!" buttonText="Get a Quote" link="/quote" colour="primary" />
+            <JumboCard title="Get a free, no obligation quote today!" buttonText="Get a Quote" link="/quote" colour="secondary" image="desk" />
           </div>
+        </Section>
+
+        <Section id="tesimonials">
+          <div className="wrapper">
+            Testimonials
+          </div>
+        </Section>
+
+        <Section id="Contact" fullwidth> 
+            <Contact />
         </Section>
       </PageBodyContainer>
       

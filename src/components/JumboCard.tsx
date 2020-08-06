@@ -18,6 +18,7 @@ const JumboCardContainer = styled.div`
       grid-area: title;
       font-size: 3em;
       margin: 20px 0;
+      max-width: 256px;
   }
   p {
     grid-area: text;
@@ -60,13 +61,17 @@ const Button = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${colours.Yellow};
+    background: ${colours.primary};
   }
 `;
 
-const LeadersImage = styled.div`
+interface ImageProps {
+  image: imageLib;
+}
+
+const MainImage = styled.div`
   grid-area: image;
-  background: url(${Images['desk']});
+  background: url(${(p: ImageProps) => Images[p.image]});
   background-size: cover;
   height: 500px;
 `;
@@ -76,9 +81,10 @@ interface IProps {
   buttonText: string,
   link: string,
   colour: string,
+  image: imageLib,
 }
 
-const JumboCard: FC<IProps> = ({ title, buttonText, link, colour }: IProps) => {
+const JumboCard: FC<IProps> = ({ title, buttonText, link, colour, image }: IProps) => {
   const history = useHistory();
   
   return (
@@ -89,7 +95,7 @@ const JumboCard: FC<IProps> = ({ title, buttonText, link, colour }: IProps) => {
           <p>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eoscu eum an brute copiosae hendrerit. Eos erant dolorum an.</p>
           <Button onClick={() => history.push(`${process.env.PUBLIC_URL}${link}`)}>{buttonText}</Button>
         </SideContainer>
-        <LeadersImage />
+        <MainImage image={image}/>
       </JumboCardContainer>
     </>
   );
