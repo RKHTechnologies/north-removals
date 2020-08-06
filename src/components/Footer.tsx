@@ -27,6 +27,7 @@ const FooterContainer = styled.footer`
   @media(max-width: ${SharedSettings.mobile}) {
     flex-direction: column;
     padding-bottom: 15px;
+    text-align: center;
 
     div { margin-left: 36px; }
   }

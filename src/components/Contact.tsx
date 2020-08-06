@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colours } from "../Shared/SharedStyles";
+import { colours, SharedSettings } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
@@ -19,14 +19,13 @@ const Section = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    
+    width: 100%;
+    overflow: hidden;
+
     &#about {
         padding-top: 130px;
     }
 
-    @media(min-width: 1800px) {
-        width: 100%;
-    }
     @media(max-width: 1100px) {
         padding: 20px;
     }
@@ -46,30 +45,38 @@ const Container = styled.div`
 
 const MainHeader = styled.h1`
   text-transform: uppercase;
-  /* letter-spacing: 7px; */
   font-weight: 600;
   -webkit-text-stroke: 3px ${colours.dark};
   color: ${colours.secondary};
   font-size: 3em;
   margin: 0 0 30px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    font-size: 2.4em;
+    -webkit-text-stroke: 2px ${colours.dark};
+  }
 `;
 
 const SubHeader = styled.div`
   max-width: 1000px;
   color: ${colours.dark};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    font-size: 0.8em;
+  }
 `;
 
 const LinksContainer = styled.div`
-  width: 100%;
   padding: 20px;
   max-width: 1000px;
-  
+
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   @media(max-width: 1100px) {
     grid-template-columns: 1fr;
-    justify-items: center;
+    font-size: 0.7em;
+    margin: 0;
   }
 `;
 
@@ -106,7 +113,8 @@ const Link = styled.div`
 
   @media(max-width: 1100px) {
     flex-direction: row !important;
-    padding: 10px 18px 14px 0 !important;
+    padding: 0 18px 0 0 !important;
+    margin: 0;
   }
 `;
 
@@ -128,6 +136,7 @@ const Column = styled.div`
 
   @media(max-width: 1100px) {
     width: 100%;
+    padding: 0;
   }
 `;
 
@@ -184,14 +193,14 @@ const Icon = styled(FontAwesomeIcon)`
 
 
 const Contact: React.FC = () => {
-  
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    
+
     let newObject: any = {};
     data.forEach((value, key) => {newObject[key] = value});
-    
+
     //Not currently used - for future API integration
     let json = JSON.stringify(newObject);
     console.dir(json);
@@ -204,7 +213,7 @@ const Contact: React.FC = () => {
         Phone: ${newObject.phone}%0D%0A
         Email: ${newObject.email}%0D%0A%0D%0A
         Subject: ${newObject.subject}%0D%0A
-        Message: ${newObject.message}`, 
+        Message: ${newObject.message}`,
         '_blank'
     );
   }

@@ -59,7 +59,8 @@ export const PageContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 150px);
+    padding-top: 150px;
 `;
 
 export const PageBodyContainer = styled.div`
