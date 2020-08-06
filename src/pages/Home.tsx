@@ -39,6 +39,8 @@ const Home: FC = () => {
         <Section id="Contact" fullwidth> 
             <Contact />
         </Section>
+
+        {/* <Footer /> */}
       </PageBodyContainer>
       
     </>
