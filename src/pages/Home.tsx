@@ -5,6 +5,7 @@ import ProductCards from '../components/ProductCards';
 import JumboCard from '../components/JumboCard';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import Testimonials from '../components/Testimonials';
 
 const Home: FC = () => {
   return (
@@ -25,15 +26,13 @@ const Home: FC = () => {
           </div>
         </Section>
 
+        <Section id="tesimonials" fullwidth>
+            <Testimonials />
+        </Section>
+
         <Section id="quote">
           <div className="wrapper">
             <JumboCard title="Get a free, no obligation quote today!" buttonText="Get a Quote" link="/quote" colour="secondary" image="desk" />
-          </div>
-        </Section>
-
-        <Section id="tesimonials">
-          <div className="wrapper">
-            Testimonials
           </div>
         </Section>
 

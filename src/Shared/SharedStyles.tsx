@@ -65,7 +65,7 @@ export const PageContainer = styled.div`
 
 export const PageBodyContainer = styled.div`
   position: absolute;
-  top: 150px;
+  top: 206px;
   bottom: 0;
   left: 0;
   right: 0;
