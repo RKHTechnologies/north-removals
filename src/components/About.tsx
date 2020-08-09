@@ -24,34 +24,45 @@ const Grid = styled.div`
 `;
 
 const GridItem = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: 
+    'icon title'
+    'icon description';
+  position: relative;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  position: relative; */
 
   @media(max-width: ${SharedSettings.mobile}) {
-    justify-content: center;
+    /* justify-content: center; */
   }
 `;
 
 const Icon = styled(FontAwesomeIcon)`
+  grid-area: icon;
   height: 50px;
   border-radius: 50%;
   margin: 7px 15px 0px;
   color: ${colours.secondary};
+  position: absolute;
+  right: 0;
 `;
 
 const Title = styled.h2`
-  width: 72%;
+  grid-area: title;
+  width: 85%;
   margin-top: 18px;
   margin-bottom: 0;
   color: ${colours.primary};
 `;
 
 const Description = styled.p`
-  width: 72%;
-  margin-left: 62px;
-  margin-top: 0;
+  grid-area: description;
+  width: 85%;
+  margin-top: 5px;
   line-height: 24px;
 `;
 
@@ -83,7 +94,7 @@ const About: FC = () => {
         
         <GridItem>
           <Icon icon={faCalendarAlt} size="2x" />
-          <Title>5 Years Experience</Title>
+          <Title>7 Years Experience</Title>
           <Description>Our team is experience in all types of removals; houses, flats, offices - no job is too big or small</Description>
         </GridItem>
 
