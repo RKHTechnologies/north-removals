@@ -6,6 +6,7 @@ import JumboCard from '../components/JumboCard';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Testimonials from '../components/Testimonials';
+import About from '../components/About';
 
 const Home: FC = () => {
   return (
@@ -15,8 +16,7 @@ const Home: FC = () => {
 
         <Section id="about">
           <div className="wrapper">
-
-            About section
+            <About />
           </div>
         </Section>
 

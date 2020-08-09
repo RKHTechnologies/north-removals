@@ -1,0 +1,106 @@
+import React, { FC } from "react";
+import styled from "styled-components";
+import { colours, SharedSettings } from "../Shared/SharedStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSmile, faUmbrellaBeach, faBoxes, faCalendarAlt, faHandshake, faHourglassHalf } from "@fortawesome/free-solid-svg-icons";
+
+const TitleSection = styled.div`
+  font-weight: 400;
+  font-size: 1.5em;
+  margin: 40px auto;
+  color: ${colours.dark};
+  text-align: center;
+`;
+
+const Grid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: ${colours.dark};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const GridItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    justify-content: center;
+  }
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+  height: 50px;
+  border-radius: 50%;
+  margin: 7px 15px 0px;
+  color: ${colours.secondary};
+`;
+
+const Title = styled.h2`
+  width: 72%;
+  margin-top: 18px;
+  margin-bottom: 0;
+  color: ${colours.primary};
+`;
+
+const Description = styled.p`
+  width: 72%;
+  margin-left: 62px;
+  margin-top: 0;
+  line-height: 24px;
+`;
+
+
+const About: FC = () => {
+  return (
+    <>
+      <TitleSection>
+        Looking for a local, reliable and professional removals service? Our friendly team will take all the stress out of your moving day.
+      </TitleSection>
+      <Grid>
+        <GridItem>
+          <Icon icon={faSmile} size="2x" />
+          <Title>Friendly Service</Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
+        </GridItem>
+        
+        <GridItem>
+          <Icon icon={faUmbrellaBeach} size="2x" />
+          <Title>Stress Free</Title>
+          <Description>We'll sort everything out for you, taking away the stress and hassle of your move</Description>
+        </GridItem>
+
+        <GridItem>
+          <Icon icon={faBoxes} size="2x" />
+          <Title>Expert advice on packing</Title>
+          <Description>Our experienced colleagues can provide help with fitting and adjusting packaged items</Description>
+        </GridItem>
+        
+        <GridItem>
+          <Icon icon={faCalendarAlt} size="2x" />
+          <Title>5 Years Experience</Title>
+          <Description>Our team is experience in all types of removals; houses, flats, offices - no job is too big or small</Description>
+        </GridItem>
+
+        <GridItem>
+          <Icon icon={faHourglassHalf} size="2x" />
+          <Title>Half Hourly Rates</Title>
+          <Description>This cost effective solution allows you to simply pay for the time used</Description>
+        </GridItem>
+
+        <GridItem>
+          <Icon icon={faHandshake} size="2x" />
+          <Title>If you're not happy we're not happy</Title>
+          <Description>As a customer driven organisation, your happiness is our priority</Description>
+        </GridItem>
+      </Grid>
+    </>
+  );
+}
+
+export default About;

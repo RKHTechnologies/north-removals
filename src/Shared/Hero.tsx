@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import Images, {imageLib} from './ImageLib';
+import { SharedSettings } from './SharedStyles';
 
 interface HeroProps {
     imageUrl: string;
@@ -18,6 +19,10 @@ const HeroBanner = styled.div`
     background-repeat: no-repeat;
     background-position-y: ${(p: HeroProps):string => p.imageHeight ?? "center"};
     background-position-x: center;
+
+    @media(max-width: ${SharedSettings.mobile}) {
+        height: 50%;
+  }
 `;
 
 
