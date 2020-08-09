@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { colours } from '../Shared/SharedStyles';
+import { colours, SharedSettings } from '../Shared/SharedStyles';
 import { useHistory } from 'react-router-dom';
 import Images, {imageLib} from '../Shared/ImageLib';
 
@@ -24,6 +24,33 @@ const JumboCardContainer = styled.div`
     grid-area: text;
     font-weight: 400;
     color: ${colours.dark};
+    width: 100%;
+  }
+
+  @media(max-width: 1355px) {
+    h3 { font-size: 2.6em; }
+  }
+
+  @media(max-width: 1230px) {
+    h3 { font-size: 2.3em; }
+  }
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'side'
+      'image';
+
+    h3 {
+      font-size: 2em;
+      max-width: none;
+      margin: 10px auto 0;
+    }
+
+    p {
+      text-align: center;
+    }
   }
 `;
 
@@ -47,6 +74,21 @@ const SideContainer = styled.div`
     right: -22px;
     top: calc(50% - 22px);
   }
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 10px;
+    text-align: center;
+    
+    &:after {
+      border-top: 22px solid ${colours.secondary};
+      border-bottom: none;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      right: calc(50% - 22px);
+      bottom: -22px;
+      top: auto;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -63,6 +105,10 @@ const Button = styled.button`
   &:hover {
     background: ${colours.primary};
   }
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    margin: 4px auto 6px;
+  }
 `;
 
 interface ImageProps {
@@ -74,6 +120,11 @@ const MainImage = styled.div`
   background: url(${(p: ImageProps) => Images[p.image]});
   background-size: cover;
   height: 500px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    height: 300px;
+
+  }  
 `;
 
 interface IProps {
@@ -92,7 +143,7 @@ const JumboCard: FC<IProps> = ({ title, buttonText, link, colour, image }: IProp
       <JumboCardContainer>
         <SideContainer>
           <h3>{title}</h3>
-          <p>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eoscu eum an brute copiosae hendrerit. Eos erant dolorum an.</p>
+          <p>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu.</p>
           <Button onClick={() => history.push(`${process.env.PUBLIC_URL}${link}`)}>{buttonText}</Button>
         </SideContainer>
         <MainImage image={image}/>

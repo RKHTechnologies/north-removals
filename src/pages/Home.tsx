@@ -27,7 +27,7 @@ const Home: FC = () => {
         </Section>
 
         <Section id="tesimonials" fullwidth>
-            {/* <Testimonials /> */}
+            <Testimonials />
         </Section>
 
         <Section id="quote">
