@@ -164,7 +164,7 @@ const MultiLineForm = styled.textarea`
   font-size: 0.8em;
 `;
 
-const SubmitButton = styled.input`
+export const SubmitButton = styled.input`
   width: 300px;
   height: 50px;
   border-radius: 3px;

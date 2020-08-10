@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { PageBodyContainer, colours, SharedSettings } from '../Shared/SharedStyles';
 import styled from 'styled-components';
+import { SubmitButton } from '../components/Contact';
 
 const Container = styled(PageBodyContainer)`
   background: ${colours.primary};
@@ -40,11 +41,11 @@ const FormContainer = styled.form`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px;
+  justify-content: flex-start;
+  padding: 0 50px;
 
   @media(max-width: ${SharedSettings.mobile}) {
-    padding: 5px;
+    padding: 0 5px;  
   }
 `;
 
@@ -59,20 +60,114 @@ const FormItem = styled.input`
   padding-left: 10px;
 `;
 
+const ItemsContainer = styled.div`
+  width: 100%;
+  max-width: ${SharedSettings.maxWidth};
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 50px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 5px;
+  }
+`;
+
+const Item = styled.div`
+  width: 100%;
+  display: flex;
+  margin: 10px;
+  padding-left: 10px;
+`;
+const ItemTitle = styled.p`
+`;
+const ItemCount = styled.p`
+`;
+const ItemButton = styled.button`
+  
+`;
+
+
+const Submit = styled(SubmitButton)`
+  margin: 30px calc(50% - 150px) 0;
+`;
+
 
 const Quote: FC = () => {
+  
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+
+    let newObject: any = {};
+    data.forEach((value, key) => {newObject[key] = value});
+
+    //Not currently used - for future API integration
+    let json = JSON.stringify(newObject);
+    console.dir(json);
+
+    window.open(
+      `mailto:enquiries@northremovals.co.uk
+        ?subject=${"Quote Enquiry"}
+        &body=%0D%0A
+        Name: ${newObject.name}%0D%0A
+        Phone: ${newObject.phone}%0D%0A
+        Email: ${newObject.email}%0D%0A%0D%0A`,
+        '_blank'
+    );
+  }
+
+  const [itemCount, setItemCount] = useState([
+    {
+      id: 0,
+      name: "armchair",
+      cubicFeet: 15,
+      count: 0,
+    },
+    {
+      id: 1,
+      name: "Bookself (small)",
+      CubicFeet: 15,
+      count: 0,
+    }
+  ]);
+
+  const updateItemCount = (itemId: number, increment: boolean) => {
+    let nextState: any;
+    if (increment)
+      nextState = itemCount.map(x => x.id === itemId ? { ...x, count: x.count + 1 } : x);
+    else
+      nextState = itemCount.map(x => x.id === itemId ? { ...x, count: x.count - 1 } : x);
+    
+    setItemCount(nextState);
+  };
+
   return (
     <Container> 
       <MainHeader>Get a Quote</MainHeader>
       <SubHeader>Please fill in the below, and we will get back to you as soon as possible</SubHeader>
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit}>
         <FormItem placeholder="Name" name="name" />
         <FormItem placeholder="Phone" name="phone" />
         <FormItem placeholder="Email" name="email" />
         <FormItem placeholder="Moving Date" name="movingdate" />
         <FormItem placeholder="Moving From" name="movingfrom" />
         <FormItem placeholder="Moving To" name="movingto" />
+        {/* <Submit type="submit" value="SUBMIT" /> */}
       </FormContainer>
+
+      <ItemsContainer>
+        <Item>
+          <ItemTitle>Armchair</ItemTitle>
+          <ItemButton onClick={() => updateItemCount(0, false)}>-</ItemButton>
+          <ItemCount>{itemCount[0].count}</ItemCount>
+          <ItemButton onClick={() => updateItemCount(0, true)}>+</ItemButton>
+        </Item>
+
+      </ItemsContainer>
+
     </Container>
   );
 }
