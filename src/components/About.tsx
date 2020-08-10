@@ -30,15 +30,6 @@ const GridItem = styled.div`
     'icon title'
     'icon description';
   position: relative;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  position: relative; */
-
-  @media(max-width: ${SharedSettings.mobile}) {
-    /* justify-content: center; */
-  }
 `;
 
 const Icon = styled(FontAwesomeIcon)`

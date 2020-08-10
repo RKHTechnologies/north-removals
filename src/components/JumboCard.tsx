@@ -143,7 +143,7 @@ const JumboCard: FC<IProps> = ({ title, buttonText, link, colour, image }: IProp
       <JumboCardContainer>
         <SideContainer>
           <h3>{title}</h3>
-          <p>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu.</p>
+          <p>With prices from £20 per half hour, why wait? Click below to find out more </p>
           <Button onClick={() => history.push(`${process.env.PUBLIC_URL}${link}`)}>{buttonText}</Button>
         </SideContainer>
         <MainImage image={image}/>
