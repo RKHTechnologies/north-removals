@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { PageBodyContainer, colours, SharedSettings } from '../Shared/SharedStyles';
 import styled from 'styled-components';
 import { SubmitButton } from '../components/Contact';
+import { initialState } from '../initialItemState';
 
 const Container = styled(PageBodyContainer)`
   background: ${colours.primary};
@@ -89,58 +90,52 @@ const ItemButton = styled.button`
   
 `;
 
-
 const Submit = styled(SubmitButton)`
   margin: 30px calc(50% - 150px) 0;
 `;
 
 
+const handleSubmit = (event: any) => {
+  event.preventDefault();
+  const data = new FormData(event.target);
+
+  let newObject: any = {};
+  data.forEach((value, key) => {newObject[key] = value});
+
+  //Not currently used - for future API integration
+  let json = JSON.stringify(newObject);
+  console.dir(json);
+
+  window.open(
+    `mailto:enquiries@northremovals.co.uk
+      ?subject=${"Quote Enquiry"}
+      &body=%0D%0A
+      Name: ${newObject.name}%0D%0A
+      Phone: ${newObject.phone}%0D%0A
+      Email: ${newObject.email}%0D%0A%0D%0A`,
+      '_blank'
+  );
+}
+
 const Quote: FC = () => {
-  
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    const data = new FormData(event.target);
 
-    let newObject: any = {};
-    data.forEach((value, key) => {newObject[key] = value});
-
-    //Not currently used - for future API integration
-    let json = JSON.stringify(newObject);
-    console.dir(json);
-
-    window.open(
-      `mailto:enquiries@northremovals.co.uk
-        ?subject=${"Quote Enquiry"}
-        &body=%0D%0A
-        Name: ${newObject.name}%0D%0A
-        Phone: ${newObject.phone}%0D%0A
-        Email: ${newObject.email}%0D%0A%0D%0A`,
-        '_blank'
-    );
-  }
-
-  const [itemCount, setItemCount] = useState([
-    {
-      id: 0,
-      name: "armchair",
-      cubicFeet: 15,
-      count: 0,
-    },
-    {
-      id: 1,
-      name: "Bookself (small)",
-      CubicFeet: 15,
-      count: 0,
-    }
-  ]);
+  const [volumeCount, setVolumeCount] = useState(0);
+  const [itemCount, setItemCount] = useState(initialState);
 
   const updateItemCount = (itemId: number, increment: boolean) => {
-    let nextState: any;
-    if (increment)
+    let nextState: any, cubicFeet: any;
+
+    if (increment) {
       nextState = itemCount.map(x => x.id === itemId ? { ...x, count: x.count + 1 } : x);
-    else
+      cubicFeet = nextState[itemId].cubicFeet;
+      setVolumeCount(volumeCount + cubicFeet);
+    }
+    else {
       nextState = itemCount.map(x => x.id === itemId ? { ...x, count: x.count - 1 } : x);
-    
+      cubicFeet = nextState[itemId].cubicFeet;
+      setVolumeCount(volumeCount - cubicFeet);
+    }
+
     setItemCount(nextState);
   };
 
@@ -155,18 +150,21 @@ const Quote: FC = () => {
         <FormItem placeholder="Moving Date" name="movingdate" />
         <FormItem placeholder="Moving From" name="movingfrom" />
         <FormItem placeholder="Moving To" name="movingto" />
-        {/* <Submit type="submit" value="SUBMIT" /> */}
+        <Submit type="submit" value="SUBMIT" />
       </FormContainer>
 
       <ItemsContainer>
-        <Item>
-          <ItemTitle>Armchair</ItemTitle>
-          <ItemButton onClick={() => updateItemCount(0, false)}>-</ItemButton>
-          <ItemCount>{itemCount[0].count}</ItemCount>
-          <ItemButton onClick={() => updateItemCount(0, true)}>+</ItemButton>
-        </Item>
-
+        {itemCount.map(item => (
+          <Item>
+            <ItemTitle>{item.name}</ItemTitle>
+            <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
+            <ItemCount>{itemCount[item.id].count}</ItemCount>
+            <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
+          </Item>
+        ))}
+        <div>SumCount: {volumeCount}</div>
       </ItemsContainer>
+      
 
     </Container>
   );
