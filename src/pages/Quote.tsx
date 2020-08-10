@@ -65,24 +65,24 @@ const ItemsContainer = styled.div`
   width: 100%;
   max-width: ${SharedSettings.maxWidth};
   margin: auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   padding: 50px;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
   @media(max-width: ${SharedSettings.mobile}) {
     padding: 5px;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
 const Item = styled.div`
   width: 100%;
-  display: flex;
-  margin: 10px;
   padding-left: 10px;
+  box-sizing: border-box;
+  display: flex;
 `;
 const ItemTitle = styled.p`
+  
 `;
 const ItemCount = styled.p`
 `;
