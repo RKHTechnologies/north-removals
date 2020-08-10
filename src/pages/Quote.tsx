@@ -1,11 +1,12 @@
 import React, { FC, useState } from 'react';
-import { PageBodyContainer, colours, SharedSettings } from '../Shared/SharedStyles';
+import { colours, SharedSettings } from '../Shared/SharedStyles';
 import styled from 'styled-components';
 import { SubmitButton } from '../components/Contact';
 import { initialState } from '../initialItemState';
 
-const Container = styled(PageBodyContainer)`
+const Container = styled.div`
   background: ${colours.primary};
+  padding-top: 206px;
 `;
 
 const MainHeader = styled.h1`
@@ -66,6 +67,7 @@ const ItemsContainer = styled.div`
   max-width: ${SharedSettings.maxWidth};
   margin: auto;
   padding: 50px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   
@@ -75,19 +77,49 @@ const ItemsContainer = styled.div`
   }
 `;
 
+const ItemHeader = styled.p`
+
+`;
+
 const Item = styled.div`
-  width: 100%;
+  /* width: 80%; */
+  width: 260px;
+  margin: auto;
   padding-left: 10px;
   box-sizing: border-box;
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 const ItemTitle = styled.p`
-  
+  color: ${colours.dark};
+  font-weight: bold;
+  font-size: 1.05em;
+  /*font-weight: normal; */
 `;
 const ItemCount = styled.p`
+  font-size: 2em;
+  margin: 0 10px 0 20px;
+  color: ${colours.light};
 `;
 const ItemButton = styled.button`
-  
+  width: 40px;
+  height: 40px;
+  border: 2px solid ${colours.dark};
+  color: ${colours.dark};
+  background: ${colours.secondary};
+  font-size: 2em;
+
+  &:first-of-type {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &:last-child {
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 `;
 
 const Submit = styled(SubmitButton)`
@@ -154,15 +186,25 @@ const Quote: FC = () => {
       </FormContainer>
 
       <ItemsContainer>
-        {itemCount.map(item => (
+        <ItemHeader>Lounge &amp; Conservatory</ItemHeader>
+        {itemCount.map(item => item.section === "Lounge & Conservatory" ? (
           <Item>
             <ItemTitle>{item.name}</ItemTitle>
-            <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
             <ItemCount>{itemCount[item.id].count}</ItemCount>
+            <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
             <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
           </Item>
-        ))}
-        <div>SumCount: {volumeCount}</div>
+        ) : null)}
+
+        <ItemHeader>Living Area</ItemHeader>
+        {itemCount.map(item => item.section === "Living Area" ? (
+          <Item>
+            <ItemTitle>{item.name}</ItemTitle>
+            <ItemCount>{itemCount[item.id].count}</ItemCount>
+            <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
+            <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
+          </Item>
+        ) : null)}
       </ItemsContainer>
       
 
