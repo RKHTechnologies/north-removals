@@ -6,7 +6,7 @@ import { initialState } from '../initialItemState';
 
 const Container = styled.div`
   background: ${colours.primary};
-  padding-top: 206px;
+  padding-top: 196px;
 `;
 
 const MainHeader = styled.h1`
@@ -70,11 +70,19 @@ const ItemsContainer = styled.div`
   padding-top: 10px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   
+  @media(max-width: 1300px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   @media(max-width: ${SharedSettings.mobile}) {
     padding: 5px;
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media(max-width: 700px) {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -88,8 +96,8 @@ const ItemHeader = styled.p`
 
 const Item = styled.div`
   /* width: 80%; */
-  width: 260px;
-  margin: auto;
+  width: 300px;
+  margin-left: calc(50% - 206px);
   padding-left: 10px;
   box-sizing: border-box;
   display: flex;
@@ -104,7 +112,7 @@ const ItemTitle = styled.p`
 `;
 const ItemCount = styled.p`
   font-size: 2em;
-  margin: 0 10px 0 20px;
+  margin: 0 20px;
   color: ${colours.light};
 `;
 const ItemButton = styled.button`
@@ -114,11 +122,27 @@ const ItemButton = styled.button`
   color: ${colours.dark};
   background: ${colours.secondary};
   font-size: 2em;
+  position: relative;
+
+  &:after {
+    content:'+';
+    position: absolute;
+    font-family: initial;
+    margin-top: -18px;
+    margin-left: -8px;
+  }
 
   &:first-of-type {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-right: none;
+    margin-right: 2px;
+
+    &:after {
+      content: '-';
+      margin-left: -6px;
+      margin-top: -20px;
+    }
   }
 
   &:last-child {
@@ -201,8 +225,8 @@ const Quote: FC = () => {
               <Item>
                 <ItemTitle>{item.name}</ItemTitle>
                 <ItemCount>{itemCount[item.id].count}</ItemCount>
-                <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
-                <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
+                <ItemButton onClick={() => updateItemCount(item.id, false)} />
+                <ItemButton onClick={() => updateItemCount(item.id, true)} />
               </Item>
             ) : null)}
           </ItemsContainer>
