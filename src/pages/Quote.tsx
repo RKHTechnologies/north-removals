@@ -67,6 +67,7 @@ const ItemsContainer = styled.div`
   max-width: ${SharedSettings.maxWidth};
   margin: auto;
   padding: 50px;
+  padding-top: 10px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -78,7 +79,11 @@ const ItemsContainer = styled.div`
 `;
 
 const ItemHeader = styled.p`
-
+  margin-bottom: 0;
+  margin-top: 50px;
+  text-align: center;
+  color: ${colours.dark};
+  font-size: 2em;
 `;
 
 const Item = styled.div`
@@ -95,7 +100,7 @@ const ItemTitle = styled.p`
   color: ${colours.dark};
   font-weight: bold;
   font-size: 1.05em;
-  /*font-weight: normal; */
+  text-align: right;
 `;
 const ItemCount = styled.p`
   font-size: 2em;
@@ -113,10 +118,11 @@ const ItemButton = styled.button`
   &:first-of-type {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-right: none;
   }
 
   &:last-child {
-    border-left: none;
+    margin-left: -2px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -171,6 +177,8 @@ const Quote: FC = () => {
     setItemCount(nextState);
   };
 
+  const sectionList = [...Array.from(new Set(itemCount.map(item => item.section)))];
+  
   return (
     <Container> 
       <MainHeader>Get a Quote</MainHeader>
@@ -182,32 +190,24 @@ const Quote: FC = () => {
         <FormItem placeholder="Moving Date" name="movingdate" />
         <FormItem placeholder="Moving From" name="movingfrom" />
         <FormItem placeholder="Moving To" name="movingto" />
-        <Submit type="submit" value="SUBMIT" />
+        {/* <Submit type="submit" value="SUBMIT" /> */}
       </FormContainer>
 
-      <ItemsContainer>
-        <ItemHeader>Lounge &amp; Conservatory</ItemHeader>
-        {itemCount.map(item => item.section === "Lounge & Conservatory" ? (
-          <Item>
-            <ItemTitle>{item.name}</ItemTitle>
-            <ItemCount>{itemCount[item.id].count}</ItemCount>
-            <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
-            <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
-          </Item>
-        ) : null)}
-
-        <ItemHeader>Living Area</ItemHeader>
-        {itemCount.map(item => item.section === "Living Area" ? (
-          <Item>
-            <ItemTitle>{item.name}</ItemTitle>
-            <ItemCount>{itemCount[item.id].count}</ItemCount>
-            <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
-            <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
-          </Item>
-        ) : null)}
-      </ItemsContainer>
-      
-
+      {sectionList.map(section => (
+        <>
+          <ItemHeader>{section}</ItemHeader>
+          <ItemsContainer>
+            {itemCount.map(item => item.section === section ? (
+              <Item>
+                <ItemTitle>{item.name}</ItemTitle>
+                <ItemCount>{itemCount[item.id].count}</ItemCount>
+                <ItemButton onClick={() => updateItemCount(item.id, false)}>-</ItemButton>
+                <ItemButton onClick={() => updateItemCount(item.id, true)}>+</ItemButton>
+              </Item>
+            ) : null)}
+          </ItemsContainer>
+        </>
+      ))}
     </Container>
   );
 }
