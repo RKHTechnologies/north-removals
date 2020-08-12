@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c3caa8f2e90ecdeb38b19b8bbc876555",
+    "revision": "66cd5eb3af04fcf0f7ddc4733d5306f3",
     "url": "/north-removals/index.html"
   },
   {
-    "revision": "ccefaee9ad851673c10d",
-    "url": "/north-removals/static/css/main.b74381ee.chunk.css"
+    "revision": "eb65a9e86f0cb97b4071",
+    "url": "/north-removals/static/css/main.0e497790.chunk.css"
   },
   {
-    "revision": "ddd6b21f4d1cfd999284",
-    "url": "/north-removals/static/js/2.8affca04.chunk.js"
+    "revision": "e8b371df8f9afd578877",
+    "url": "/north-removals/static/js/2.b015adfd.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/north-removals/static/js/2.8affca04.chunk.js.LICENSE.txt"
+    "url": "/north-removals/static/js/2.b015adfd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ccefaee9ad851673c10d",
-    "url": "/north-removals/static/js/main.fea6d78f.chunk.js"
+    "revision": "eb65a9e86f0cb97b4071",
+    "url": "/north-removals/static/js/main.004ad076.chunk.js"
   },
   {
     "revision": "6b596d4b375199752617",
@@ -38,6 +38,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fecc2428d81c6a00dc69a1d684a44f49",
     "url": "/north-removals/static/media/box.fecc2428.jpg"
+  },
+  {
+    "revision": "b41588f1655b21261b64db04cbe4e8b0",
+    "url": "/north-removals/static/media/cutting-bubblewrap.b41588f1.jpg"
   },
   {
     "revision": "55a5b36fffac2317ce5d624adff4426c",

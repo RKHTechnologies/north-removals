@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/north-removals/static/css/main.b74381ee.chunk.css",
-    "main.js": "/north-removals/static/js/main.fea6d78f.chunk.js",
-    "main.js.map": "/north-removals/static/js/main.fea6d78f.chunk.js.map",
+    "main.css": "/north-removals/static/css/main.0e497790.chunk.css",
+    "main.js": "/north-removals/static/js/main.004ad076.chunk.js",
+    "main.js.map": "/north-removals/static/js/main.004ad076.chunk.js.map",
     "runtime-main.js": "/north-removals/static/js/runtime-main.9f793428.js",
     "runtime-main.js.map": "/north-removals/static/js/runtime-main.9f793428.js.map",
-    "static/js/2.8affca04.chunk.js": "/north-removals/static/js/2.8affca04.chunk.js",
-    "static/js/2.8affca04.chunk.js.map": "/north-removals/static/js/2.8affca04.chunk.js.map",
+    "static/js/2.b015adfd.chunk.js": "/north-removals/static/js/2.b015adfd.chunk.js",
+    "static/js/2.b015adfd.chunk.js.map": "/north-removals/static/js/2.b015adfd.chunk.js.map",
     "index.html": "/north-removals/index.html",
-    "precache-manifest.664bf16c78882707a228cea26157f5b4.js": "/north-removals/precache-manifest.664bf16c78882707a228cea26157f5b4.js",
+    "precache-manifest.e10e56d50a44b765cdea246e5c86a3c2.js": "/north-removals/precache-manifest.e10e56d50a44b765cdea246e5c86a3c2.js",
     "service-worker.js": "/north-removals/service-worker.js",
-    "static/css/main.b74381ee.chunk.css.map": "/north-removals/static/css/main.b74381ee.chunk.css.map",
-    "static/js/2.8affca04.chunk.js.LICENSE.txt": "/north-removals/static/js/2.8affca04.chunk.js.LICENSE.txt",
+    "static/css/main.0e497790.chunk.css.map": "/north-removals/static/css/main.0e497790.chunk.css.map",
+    "static/js/2.b015adfd.chunk.js.LICENSE.txt": "/north-removals/static/js/2.b015adfd.chunk.js.LICENSE.txt",
     "static/media/House-Removals.jpg": "/north-removals/static/media/House-Removals.f1088437.jpg",
     "static/media/RKHT_logo.png": "/north-removals/static/media/RKHT_logo.8c8521de.png",
     "static/media/box-tape.jpg": "/north-removals/static/media/box-tape.10092ccb.jpg",
     "static/media/box.jpg": "/north-removals/static/media/box.fecc2428.jpg",
+    "static/media/cutting-bubblewrap.jpg": "/north-removals/static/media/cutting-bubblewrap.b41588f1.jpg",
     "static/media/desk.jpg": "/north-removals/static/media/desk.55a5b36f.jpg",
     "static/media/logo.png": "/north-removals/static/media/logo.03e6ad12.png",
     "static/media/logo_noText.png": "/north-removals/static/media/logo_noText.2fc9c057.png",
@@ -24,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9f793428.js",
-    "static/js/2.8affca04.chunk.js",
-    "static/css/main.b74381ee.chunk.css",
-    "static/js/main.fea6d78f.chunk.js"
+    "static/js/2.b015adfd.chunk.js",
+    "static/css/main.0e497790.chunk.css",
+    "static/js/main.004ad076.chunk.js"
   ]
 }
