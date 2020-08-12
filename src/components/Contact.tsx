@@ -16,6 +16,7 @@ const Section = styled.div`
     background: ${(p: sectionProps) => p.background};
     color: ${(p: sectionProps) => p.dark ? colours.light : "inherit"};
     padding: 50px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
