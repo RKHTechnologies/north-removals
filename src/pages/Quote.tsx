@@ -7,6 +7,10 @@ import { initialState } from '../initialItemState';
 const Container = styled.div`
   background: ${colours.primary};
   padding-top: 196px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding-top: 100px;
+  }
 `;
 
 const MainHeader = styled.h1`
@@ -97,7 +101,7 @@ const ItemHeader = styled.p`
 const Item = styled.div`
   /* width: 80%; */
   width: 300px;
-  margin-left: calc(50% - 206px);
+  margin-left: calc(50% - 190px);
   padding-left: 10px;
   box-sizing: border-box;
   display: flex;

@@ -61,6 +61,10 @@ export const PageContainer = styled.div`
     align-items: center;
     height: calc(100vh - 233px);
     padding-top: 150px;
+
+    @media(max-width: ${SharedSettings.mobile}) {
+      height: calc(100vh - 248px);
+    }
 `;
 
 export const PageBodyContainer = styled.div`

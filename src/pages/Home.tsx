@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import Hero from '../Shared/Hero';
-import { Section } from '../Shared/SharedStyles';
+import { Section, SharedSettings } from '../Shared/SharedStyles';
 import ProductCards from '../components/ProductCards';
 import JumboCard from '../components/JumboCard';
 import Contact from '../components/Contact';
@@ -10,6 +10,10 @@ import About from '../components/About';
 
 const Container = styled.div`
   padding-top: 196px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding-top: 100px;
+  }
 `;
 
 const Home: FC = () => {

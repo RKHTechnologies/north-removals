@@ -5,6 +5,10 @@ import Images, { imageLib } from '../Shared/ImageLib';
 
 const Container = styled.div`
   padding-top: 206px;
+  
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding-top: 100px;
+  }
 `;
 
 const TitleSection = styled.div`
@@ -22,9 +26,25 @@ const GridContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 
+  @media(max-width: 1300px) {
+    padding: 0 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   @media(max-width: ${SharedSettings.mobile}) {
     padding: 0 5px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+
+  @media(max-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media(max-width: 420px) {
+    grid-template-columns: 1fr;
+  }
+
+
 `;
 
 

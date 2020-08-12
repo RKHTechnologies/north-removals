@@ -11,7 +11,7 @@ interface HeroProps {
 
 const HeroBanner = styled.div`
     width: 100%;
-    height: ${(p: HeroProps):string => p.small ? "65%" : "80%"};
+    height: ${(p: HeroProps):string => p.small ? "65vh" : "55vh"};
     text-align: center;
     background: #eee;
     background-image: url(${(p: HeroProps):string => p.imageUrl});
@@ -21,7 +21,7 @@ const HeroBanner = styled.div`
     background-position-x: center;
 
     @media(max-width: ${SharedSettings.mobile}) {
-        height: 50%;
+        height: 40vh;
   }
 `;
 
