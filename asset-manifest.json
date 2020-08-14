@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/north-removals/static/css/main.0e497790.chunk.css",
-    "main.js": "/north-removals/static/js/main.88be1052.chunk.js",
-    "main.js.map": "/north-removals/static/js/main.88be1052.chunk.js.map",
+    "main.js": "/north-removals/static/js/main.2e0345b3.chunk.js",
+    "main.js.map": "/north-removals/static/js/main.2e0345b3.chunk.js.map",
     "runtime-main.js": "/north-removals/static/js/runtime-main.9f793428.js",
     "runtime-main.js.map": "/north-removals/static/js/runtime-main.9f793428.js.map",
-    "static/js/2.b015adfd.chunk.js": "/north-removals/static/js/2.b015adfd.chunk.js",
-    "static/js/2.b015adfd.chunk.js.map": "/north-removals/static/js/2.b015adfd.chunk.js.map",
+    "static/js/2.1b9b917c.chunk.js": "/north-removals/static/js/2.1b9b917c.chunk.js",
+    "static/js/2.1b9b917c.chunk.js.map": "/north-removals/static/js/2.1b9b917c.chunk.js.map",
     "index.html": "/north-removals/index.html",
-    "precache-manifest.2a3ec5c6fa2829a9728c86f8a93cd528.js": "/north-removals/precache-manifest.2a3ec5c6fa2829a9728c86f8a93cd528.js",
+    "precache-manifest.2c46cfcda79c2f919c9d97fb9ac0d4e5.js": "/north-removals/precache-manifest.2c46cfcda79c2f919c9d97fb9ac0d4e5.js",
     "service-worker.js": "/north-removals/service-worker.js",
     "static/css/main.0e497790.chunk.css.map": "/north-removals/static/css/main.0e497790.chunk.css.map",
-    "static/js/2.b015adfd.chunk.js.LICENSE.txt": "/north-removals/static/js/2.b015adfd.chunk.js.LICENSE.txt",
+    "static/js/2.1b9b917c.chunk.js.LICENSE.txt": "/north-removals/static/js/2.1b9b917c.chunk.js.LICENSE.txt",
     "static/media/House-Removals.jpg": "/north-removals/static/media/House-Removals.f1088437.jpg",
     "static/media/RKHT_logo.png": "/north-removals/static/media/RKHT_logo.8c8521de.png",
     "static/media/box-tape.jpg": "/north-removals/static/media/box-tape.10092ccb.jpg",
@@ -21,12 +21,13 @@
     "static/media/logo.png": "/north-removals/static/media/logo.03e6ad12.png",
     "static/media/logo_noText.png": "/north-removals/static/media/logo_noText.2fc9c057.png",
     "static/media/removals.jpg": "/north-removals/static/media/removals.87c62d13.jpg",
+    "static/media/removalsVan.jpg": "/north-removals/static/media/removalsVan.8ceb254b.jpg",
     "static/media/wrapped-sofa.jpg": "/north-removals/static/media/wrapped-sofa.b808918b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9f793428.js",
-    "static/js/2.b015adfd.chunk.js",
+    "static/js/2.1b9b917c.chunk.js",
     "static/css/main.0e497790.chunk.css",
-    "static/js/main.88be1052.chunk.js"
+    "static/js/main.2e0345b3.chunk.js"
   ]
 }
