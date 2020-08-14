@@ -32,7 +32,8 @@ const MainHeader = styled.h1`
 export const SubHeader = styled.div`
   color: ${colours.dark};
   text-align: center;
-  padding-top: 10px;
+  padding: 10px 0;
+  font-size: 1.2em;
 
   @media(max-width: ${SharedSettings.mobile}) {
     font-size: 0.8em;
@@ -64,6 +65,10 @@ const FormItem = styled.input`
   background: ${colours.light};
   border-radius: 5px;
   padding-left: 10px;
+
+  @media(max-width: 700px) {
+    width: calc(100% - 20px);
+  }
 `;
 
 const FormDropdown = styled.select`
@@ -79,6 +84,10 @@ const FormDropdown = styled.select`
 
   &:invalid { 
     color: gray !important;
+  }
+
+  @media(max-width: 700px) {
+    width: calc(100% - 20px);
   }
 `;
 
