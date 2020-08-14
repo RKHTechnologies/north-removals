@@ -19,7 +19,7 @@ const Container = styled.div`
 const Home: FC = () => {
   return (
     <Container>
-      <Hero image="removals" />
+      <Hero image="removalsVan" />
 
       <Section id="about">
         <div className="wrapper">
