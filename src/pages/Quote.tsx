@@ -66,6 +66,22 @@ const FormItem = styled.input`
   padding-left: 10px;
 `;
 
+const FormDropdown = styled.select`
+  box-sizing: border-box;
+  width: calc(50% - 20px);
+  margin: 10px;
+  border: 0;
+  min-height: 40px;
+  background: ${colours.light};
+  border-radius: 5px;
+  padding: 0 10px;
+  color: ${colours.dark};
+
+  &:invalid { 
+    color: gray !important;
+  }
+`;
+
 const ItemsContainer = styled.div`
   width: 100%;
   max-width: ${SharedSettings.maxWidth};
@@ -218,6 +234,30 @@ const Quote: FC = () => {
         <FormItem placeholder="Moving Date" name="movingdate" />
         <FormItem placeholder="Moving From" name="movingfrom" />
         <FormItem placeholder="Moving To" name="movingto" />
+        <FormDropdown name="fromPropertyType" required>
+          <option value="" selected disabled hidden>Property Type (From)</option>
+          <option value="Flat">Flat</option>
+          <option value="House">House</option>
+          <option value="Bungalow">Bungalow</option>
+          <option value="Office">Office</option>
+        </FormDropdown>
+        <FormDropdown name="toPropertyType" required>
+          <option value="" selected disabled hidden>Property Type (To)</option>
+          <option value="Flat">Flat</option>
+          <option value="House">House</option>
+          <option value="Bungalow">Bungalow</option>
+          <option value="Office">Office</option>
+        </FormDropdown>
+        <FormDropdown name="fromAccess" required>
+          <option value="" selected disabled hidden>Vehicle Access (From)</option>
+          <option value="Within 10m">Within 10m</option>
+          <option value="Over 10m">Over 10m</option>
+        </FormDropdown>
+        <FormDropdown name="toAccess" required>
+          <option value="" selected disabled hidden>Vehicle Access (To)</option>
+          <option value="Within 10m">Within 10m</option>
+          <option value="Over 10m">Over 10m</option>
+        </FormDropdown>
         {/* <Submit type="submit" value="SUBMIT" /> */}
       </FormContainer>
 

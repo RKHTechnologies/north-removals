@@ -912,13 +912,7 @@ export const initialState = [
     section: "Office/ Study",
     count: 0,
   },
-  {
-    id: 167,
-    name: "Monitor",
-    cubicFeet: 5,
-    section: "Office/ Study",
-    count: 0,
-  },
+
 
 
 
@@ -1213,5 +1207,12 @@ export const initialState = [
     cubicFeet: 5,
     section: "Other Items",
     count: 0,
-  }
+  },
+  {
+    id: 167,
+    name: "Monitor",
+    cubicFeet: 5,
+    section: "Office/ Study",
+    count: 0,
+  },
 ];

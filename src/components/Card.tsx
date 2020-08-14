@@ -2,10 +2,12 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Images, { imageLib } from '../Shared/ImageLib';
 import { colours } from '../Shared/SharedStyles';
+import { useHistory } from 'react-router-dom';
 
 interface IProps {
   image: imageLib;
   primary: string;
+  url: string
 }
 
 interface IContainerProps {
@@ -53,23 +55,25 @@ const PrimaryText = styled.div`
   max-width: 80%;
 `;
 
-const SecondaryText = styled.div`
-  text-align: center;
-  color: ${colours.light};
-  z-index: 1;
-  font-weight: 500;
-  margin-top: 20px;
-  width: 90%;
-  font-size: 1.1em;
-`;
+// const SecondaryText = styled.div`
+//   text-align: center;
+//   color: ${colours.light};
+//   z-index: 1;
+//   font-weight: 500;
+//   margin-top: 20px;
+//   width: 90%;
+//   font-size: 1.1em;
+// `;
 
 
-const Card: FC<IProps> = ({image, primary}: IProps) => {
+const Card: FC<IProps> = ({image, primary, url}: IProps) => {
+  const history = useHistory();
+  
   return (
     <>
-      <CardContainer image={image}>
+      <CardContainer image={image} onClick={() => history.push(`${process.env.PUBLIC_URL}${url}`)}>
         <PrimaryText>{primary}</PrimaryText>
-        <SecondaryText>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu.</SecondaryText>
+        {/* <SecondaryText>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu.</SecondaryText> */}
       </CardContainer>
     </>
   );
