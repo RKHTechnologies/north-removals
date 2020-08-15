@@ -57,51 +57,48 @@ export const Description = styled.p`
   line-height: 24px;
 `;
 
-const About: FC = () => {
+const PackingTips: FC = () => {
   return (
     <>
-      <TitleSection>
-        We are a family run removals company with over 7 years experince. We take pride in offering a professional and reliable services with competitive rates. Let us take the stress out of your moving day and do the heavy lifting for you.
-      </TitleSection>
       <Grid>
         <GridItem>
           <Icon icon={faSmile} size="2x" />
-          <Title>Friendly Service</Title>
-          <Description>Above all we are happy to help make your move as seamless as possible</Description>
+          <Title>Preperation</Title>
+          <Description>Begin Packing well in advance</Description>
         </GridItem>
         
         <GridItem>
           <Icon icon={faUmbrellaBeach} size="2x" />
-          <Title>Stress Free</Title>
-          <Description>We'll sort everything out for you, taking away the stress and hassle of your move</Description>
+          <Title>Bubble Wrap Delicates</Title>
+          <Description>Bubble wrap all your delicate itms e.g. pictures, canvases and anything glass</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faBoxes} size="2x" />
-          <Title>Expert advice on packing</Title>
-          <Description>Our experienced colleagues can provide help with fitting and adjusting packaged items</Description>
+          <Title>Box small items</Title>
+          <Description>Anything smaller than a microwave put in a box</Description>
         </GridItem>
         
         <GridItem>
           <Icon icon={faCalendarAlt} size="2x" />
-          <Title>7 Years Experience</Title>
-          <Description>Our team is experience in all types of removals; houses, flats, offices - no job is too big or small</Description>
+          <Title>Documents</Title>
+          <Description>Keep your important documents with you</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faHourglassHalf} size="2x" />
-          <Title>Half Hourly Rates</Title>
-          <Description>This cost effective solution allows you to simply pay for the time used</Description>
-        </GridItem>
+          <Title>Labels</Title>
+          <Description>Make sure you label your boxes accordingly</Description>
+        </GridItem> 
 
         <GridItem>
           <Icon icon={faHandshake} size="2x" />
-          <Title>If you're not happy we're not happy</Title>
-          <Description>As a customer driven organisation, your happiness is our priority</Description>
+          <Title>last one</Title>
+          <Description>dshghgjkdfhgjk</Description>
         </GridItem>
       </Grid>
     </>
   );
 }
 
-export default About;
+export default PackingTips;

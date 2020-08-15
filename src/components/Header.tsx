@@ -36,15 +36,21 @@ const Phone = styled.div`
   justify-content: center;
   font-size: 2em;
   color: #f5f2eb;
+
+  span {
+    display: contents;
+    font-size: 0.8em;
+  }
   
   @media(max-width: ${SharedSettings.mobile}) {
     display: none;
   }
 `;
 
-const Email = styled(Phone)`
+const Slogan = styled(Phone)`
   grid-area: email;
   font-size: 1.6em;
+  font-style: italic;
 `;
 
 const LogoContainer = styled.div`
@@ -104,12 +110,16 @@ const Header: FC = () => {
   return (
     <HeaderStrip>
       <HeaderContainer>
-        <Phone>07885 575 400</Phone>
+        <Phone>
+          07885 575 400
+          <br />
+          <span>enquiries@northremovals.co.uk</span>
+        </Phone>
         <LogoContainer onClick={() => history.push(`${process.env.PUBLIC_URL}`)}>
           <Logo />
           <LogoText>NORTH REMOVALS</LogoText>
         </LogoContainer>
-        <Email>enquiries@northremovals.co.uk</Email>
+        <Slogan>"Let us do the heavy lifting for you"</Slogan>
       </HeaderContainer>
       <HeaderBar stickyHeader />
     </HeaderStrip>
