@@ -24,13 +24,16 @@ const PackingService: FC = () => {
   
   return (
     <Container> 
-      <Hero image="removals" />
+      <Hero image="packingService" />
 
       <Section id="summary">
         <div className="wrapper">
           <Description>
-            We provide a packing service and this is the placeholder for it's description.
+            Not enough time to pack your possessions? We can offer a full packing service to take the stress away, and get all your items packed and ready for your moving day.
+            <br /><br />
+            Our pro packing tips:
           </Description>
+          
         </div>
       </Section>
 

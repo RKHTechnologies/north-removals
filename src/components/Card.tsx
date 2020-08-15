@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Images, { imageLib } from '../Shared/ImageLib';
 import { colours } from '../Shared/SharedStyles';
 import { useHistory } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 interface IProps {
   image: imageLib;

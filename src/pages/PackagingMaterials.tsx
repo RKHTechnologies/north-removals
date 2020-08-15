@@ -102,44 +102,51 @@ const PackagingMaterials: FC = () => {
 
         <GridItem>
           <Image image="box" />
-          <Name>Cardboard Box</Name>
-          <Description>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos</Description>
+          <Name>Small Box</Name>
+          <Description>Dimensions 452 x 452 x 290mm approx</Description>
+          <Price>0.00</Price>
+        </GridItem>
+
+        <GridItem>
+          <Image image="box" />
+          <Name>Medium Box</Name>
+          <Description>Dimensions 550 x 400 x 350mm approx</Description>
+          <Price>0.00</Price>
+        </GridItem>
+
+        <GridItem>
+          <Image image="box" />
+          <Name>Large Box</Name>
+          <Description>Dimensions 452 x 452 x 493mm approx</Description>
+          <Price>0.00</Price>
+        </GridItem>
+
+        <GridItem>
+          <Image image="box" />
+          <Name>Wardrobe Box</Name>
+          <Description>Dimensions 508 x 457 x 1220mm approx</Description>
           <Price>12.25</Price>
         </GridItem>
 
         <GridItem>
           <Image image="bubbleWrap" />
           <Name>Bubble Wrap</Name>
-          <Description>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos</Description>
-          <Price>1.40 per square meter</Price>
+          <Description>Priced per meter</Description>
+          <Price>1.50</Price>
         </GridItem>
 
         <GridItem>
           <Image image="box" />
-          <Name>Cardboard Box</Name>
-          <Description>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos</Description>
-          <Price>12.25</Price>
+          <Name>Tape</Name>
+          <Description>Priced per roll</Description>
+          <Price>1.50</Price>
         </GridItem>
 
         <GridItem>
           <Image image="box" />
-          <Name>Cardboard Box</Name>
-          <Description>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos</Description>
-          <Price>12.25</Price>
-        </GridItem>
-
-        <GridItem>
-          <Image image="box" />
-          <Name>Cardboard Box</Name>
-          <Description>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos</Description>
-          <Price>12.25</Price>
-        </GridItem>
-
-        <GridItem>
-          <Image image="box" />
-          <Name>Cardboard Box</Name>
-          <Description>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos</Description>
-          <Price>12.25</Price>
+          <Name>Packing Paper</Name>
+          <Description>Priced per reem</Description>
+          <Price>12.00</Price>
         </GridItem>
 
       </GridContainer>

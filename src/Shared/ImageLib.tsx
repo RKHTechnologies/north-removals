@@ -7,6 +7,7 @@ import desk from '../img/desk.jpg';
 import rkh from '../img/RKHT_logo.png';
 import bubbleWrap from '../img/cutting-bubblewrap.jpg';
 import removalsVan from '../img/removalsVan.jpg';
+import packingService from '../img/packingService.jpg';
 
 const Images = {
   'rkh': rkh,
@@ -18,8 +19,48 @@ const Images = {
   'desk': desk,
   'bubbleWrap': bubbleWrap,
   'removalsVan': removalsVan,
+  'packingService': packingService,
 }
 
-export type imageLib = 'rkh' | 'removals' | 'box' | 'boxTape' | 'homeMoves' | 'wrappedSofa' | 'desk' | 'bubbleWrap' | 'removalsVan';
+export const Image1x = {
+  'rkh': rkh,
+  'removals': removals,
+  'box': box,
+  'boxTape': boxTape,
+  'homeMoves': homeMoves,
+  'wrappedSofa': wrappedSofa,
+  'desk': desk,
+  'bubbleWrap': bubbleWrap,
+  'removalsVan': removalsVan,
+  'packingService': packingService,
+}
+
+export const Image2x = {
+  'rkh': rkh,
+  'removals': removals,
+  'box': box,
+  'boxTape': boxTape,
+  'homeMoves': homeMoves,
+  'wrappedSofa': wrappedSofa,
+  'desk': desk,
+  'bubbleWrap': bubbleWrap,
+  'removalsVan': removalsVan,
+  'packingService': packingService,
+}
+
+export const Image4x = {
+  'rkh': rkh,
+  'removals': removals,
+  'box': box,
+  'boxTape': boxTape,
+  'homeMoves': homeMoves,
+  'wrappedSofa': wrappedSofa,
+  'desk': desk,
+  'bubbleWrap': bubbleWrap,
+  'removalsVan': removalsVan,
+  'packingService': packingService,
+}
+
+export type imageLib = 'rkh' | 'removals' | 'box' | 'boxTape' | 'homeMoves' | 'wrappedSofa' | 'desk' | 'bubbleWrap' | 'removalsVan' | 'packingService';
 
 export default Images;
