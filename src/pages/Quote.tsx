@@ -182,7 +182,7 @@ const ItemButton = styled.button`
 `;
 
 const Submit = styled(SubmitButton)`
-  margin: 30px calc(50% - 150px) 0;
+  margin: 50px calc(50% - 150px);
 `;
 
 
@@ -203,7 +203,16 @@ const handleSubmit = (event: any) => {
       &body=%0D%0A
       Name: ${newObject.name}%0D%0A
       Phone: ${newObject.phone}%0D%0A
-      Email: ${newObject.email}%0D%0A%0D%0A`,
+      Email: ${newObject.email}%0D%0A%0D%0A
+      Moving Date: ${newObject.movingdate}%0D%0A
+      Moving From: ${newObject.movingfrom}%0D%0A
+      Moving To: ${newObject.movingto}%0D%0A
+      Property Type (From): ${newObject.fromPropertyType}%0D%0A
+      Property Type (To): ${newObject.toPropertyType}%0D%0A
+      Vehicle Access (From): ${newObject.fromAccess}%0D%0A
+      Vehicle Access (To): ${newObject.toAccess}%0D%0A%0D%0A%0D%0A
+      Total Cubic Feet: 
+      `,
       '_blank'
   );
 }
@@ -236,7 +245,7 @@ const Quote: FC = () => {
     <Container> 
       <MainHeader>Get a Quote</MainHeader>
       <SubHeader>Please fill in the below, and we will get back to you as soon as possible</SubHeader>
-      <FormContainer onSubmit={handleSubmit}>
+      <FormContainer onSubmit={handleSubmit} id="quoteForm">
         <FormItem placeholder="Name" name="name" />
         <FormItem placeholder="Phone" name="phone" />
         <FormItem placeholder="Email" name="email" />
@@ -267,7 +276,6 @@ const Quote: FC = () => {
           <option value="Within 10m">Within 10m</option>
           <option value="Over 10m">Over 10m</option>
         </FormDropdown>
-        {/* <Submit type="submit" value="SUBMIT" /> */}
       </FormContainer>
 
       {sectionList.map(section => (
@@ -285,6 +293,7 @@ const Quote: FC = () => {
           </ItemsContainer>
         </>
       ))}
+      <Submit type="submit" value="SUBMIT" form="quoteForm" />
     </Container>
   );
 }
