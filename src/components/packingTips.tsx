@@ -2,15 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { colours, SharedSettings } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSmile, faUmbrellaBeach, faBoxes, faCalendarAlt, faHandshake, faHourglassHalf } from "@fortawesome/free-solid-svg-icons";
-
-const TitleSection = styled.div`
-  font-weight: 400;
-  font-size: 1.5em;
-  margin: 40px auto;
-  color: ${colours.dark};
-  text-align: center;
-`;
+import { faBoxes, faHandshake, faHourglassHalf, faTag, faPassport, faGift } from "@fortawesome/free-solid-svg-icons";
 
 export const Grid = styled.div`
   width: 100%;
@@ -62,13 +54,13 @@ const PackingTips: FC = () => {
     <>
       <Grid>
         <GridItem>
-          <Icon icon={faSmile} size="2x" />
+          <Icon icon={faHourglassHalf} size="2x" />
           <Title>Preperation</Title>
           <Description>Begin Packing well in advance</Description>
         </GridItem>
         
         <GridItem>
-          <Icon icon={faUmbrellaBeach} size="2x" />
+          <Icon icon={faGift} size="2x" />
           <Title>Bubble Wrap Delicates</Title>
           <Description>Bubble wrap all your delicate itms e.g. pictures, canvases and anything glass</Description>
         </GridItem>
@@ -80,21 +72,21 @@ const PackingTips: FC = () => {
         </GridItem>
         
         <GridItem>
-          <Icon icon={faCalendarAlt} size="2x" />
+          <Icon icon={faPassport} size="2x" />
           <Title>Documents</Title>
           <Description>Keep your important documents with you</Description>
         </GridItem>
 
         <GridItem>
-          <Icon icon={faHourglassHalf} size="2x" />
+          <Icon icon={faTag} size="2x" />
           <Title>Labels</Title>
           <Description>Make sure you label your boxes accordingly</Description>
         </GridItem> 
 
         <GridItem>
           <Icon icon={faHandshake} size="2x" />
-          <Title>last one</Title>
-          <Description>dshghgjkdfhgjk</Description>
+          <Title>Final Packing Tip?</Title>
+          <Description>...</Description>
         </GridItem>
       </Grid>
     </>

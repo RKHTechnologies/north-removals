@@ -236,7 +236,7 @@ export const initialState = [
   },
   {
     id: 33,
-    name: "Box/ Bag",
+    name: "Box / Bag",
     cubicFeet: 5,
     section: "Living Area",
     count: 0,
@@ -617,7 +617,7 @@ export const initialState = [
   },
   {
     id: 85,
-    name: "Blanket Box/ Ottoman",
+    name: "Blanket Box / Ottoman",
     cubicFeet: 12,
     section: "Bedroom",
     count: 0,
@@ -806,7 +806,7 @@ export const initialState = [
   },
   {
     id: 112,
-    name: "Box/ Bag",
+    name: "Box / Bag",
     cubicFeet: 5,
     section: "Bedroom",
     count: 0,
@@ -1203,11 +1203,14 @@ export const initialState = [
   },
   {
     id: 166,
-    name: "Box/ Bag",
+    name: "Box / Bag",
     cubicFeet: 5,
     section: "Other Items",
     count: 0,
   },
+  
+  
+  
   {
     id: 167,
     name: "Monitor",
@@ -1215,4 +1218,41 @@ export const initialState = [
     section: "Office/ Study",
     count: 0,
   },
+  {
+    id: 168,
+    name: "Box / Bag",
+    cubicFeet: 5,
+    section: "Lounge & Conservatory",
+    count: 0,
+  },
+  {
+    id: 169,
+    name: "Box / Bag",
+    cubicFeet: 5,
+    section: "Dining",
+    count: 0,
+  },
+  {
+    id: 170,
+    name: "Box / Bag",
+    cubicFeet: 5,
+    section: "Kitchen / Utility",
+    count: 0,
+  },
+  {
+    id: 171,
+    name: "Box / Bag",
+    cubicFeet: 5,
+    section: "Office/ Study",
+    count: 0,
+  },
+  {
+    id: 172,
+    name: "Box / Bag",
+    cubicFeet: 5,
+    section: "Outside",
+    count: 0,
+  },
+
+
 ];

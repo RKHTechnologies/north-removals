@@ -222,7 +222,7 @@ const Quote: FC = () => {
       setVolumeCount(volumeCount + cubicFeet);
     }
     else {
-      nextState = itemCount.map(x => x.id === itemId ? { ...x, count: x.count - 1 } : x);
+      nextState = itemCount.map(x => x.id === itemId ? { ...x, count: x.count > 0 ? (x.count - 1) : (x.count) } : x);
       cubicFeet = nextState[itemId].cubicFeet;
       setVolumeCount(volumeCount - cubicFeet);
     }
