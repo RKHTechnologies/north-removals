@@ -104,28 +104,28 @@ const PackagingMaterials: FC = () => {
           <Image image="box" />
           <Name>Small Box</Name>
           <Description>Dimensions 452 x 452 x 290mm approx</Description>
-          <Price>0.00</Price>
+          <Price>1.00</Price>
         </GridItem>
 
         <GridItem>
           <Image image="box" />
           <Name>Medium Box</Name>
           <Description>Dimensions 550 x 400 x 350mm approx</Description>
-          <Price>0.00</Price>
+          <Price>1.25</Price>
         </GridItem>
 
         <GridItem>
           <Image image="box" />
           <Name>Large Box</Name>
           <Description>Dimensions 452 x 452 x 493mm approx</Description>
-          <Price>0.00</Price>
+          <Price>1.50</Price>
         </GridItem>
 
         <GridItem>
           <Image image="box" />
           <Name>Wardrobe Box</Name>
           <Description>Dimensions 508 x 457 x 1220mm approx</Description>
-          <Price>12.25</Price>
+          <Price>7.50</Price>
         </GridItem>
 
         <GridItem>
