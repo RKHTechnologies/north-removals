@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
 import styled from 'styled-components';
 import { SubmitButton } from '../components/Contact';
-import { initialState } from '../initialItemState';
+import { initialState, IItemState } from '../initialItemState';
 
 const Container = styled.div`
   background: ${colours.primary};
@@ -185,38 +185,6 @@ const Submit = styled(SubmitButton)`
   margin: 50px calc(50% - 150px);
 `;
 
-
-const handleSubmit = (event: any) => {
-  event.preventDefault();
-  const data = new FormData(event.target);
-
-  let newObject: any = {};
-  data.forEach((value, key) => {newObject[key] = value});
-
-  //Not currently used - for future API integration
-  let json = JSON.stringify(newObject);
-  console.dir(json);
-
-  window.open(
-    `mailto:enquiries@northremovals.co.uk
-      ?subject=${"Quote Enquiry"}
-      &body=%0D%0A
-      Name: ${newObject.name}%0D%0A
-      Phone: ${newObject.phone}%0D%0A
-      Email: ${newObject.email}%0D%0A%0D%0A
-      Moving Date: ${newObject.movingdate}%0D%0A
-      Moving From: ${newObject.movingfrom}%0D%0A
-      Moving To: ${newObject.movingto}%0D%0A
-      Property Type (From): ${newObject.fromPropertyType}%0D%0A
-      Property Type (To): ${newObject.toPropertyType}%0D%0A
-      Vehicle Access (From): ${newObject.fromAccess}%0D%0A
-      Vehicle Access (To): ${newObject.toAccess}%0D%0A%0D%0A%0D%0A
-      Total Cubic Feet: 
-      `,
-      '_blank'
-  );
-}
-
 const Quote: FC = () => {
 
   const [volumeCount, setVolumeCount] = useState(0);
@@ -238,6 +206,65 @@ const Quote: FC = () => {
 
     setItemCount(nextState);
   };
+
+
+  const getItemsList = () => {
+    let itemsList: Array<IItemState> = [];
+    itemCount.map(x => x.count > 0 && itemsList.push(x));
+    return itemsList;
+  }
+  
+  const getTotalCubicFeet = (itemsList: Array<IItemState>) => {
+    let totalCubicFeet: number = 0;
+    itemsList.map(i => totalCubicFeet += (i.count * i.cubicFeet));      
+    return totalCubicFeet;
+  }
+
+  const stringBuilder = (itemsList: Array<IItemState>) => {
+    var lines: Array<string> = [];
+    itemsList.map(i => lines.push(`(${i.count}x) ${i.name}`));
+    return lines.join("");
+  }
+
+  
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+
+    let newObject: any = {};
+    data.forEach((value, key) => {newObject[key] = value});
+
+    const itemsList = getItemsList();
+    const totalCubicFeet = getTotalCubicFeet(itemsList);
+    const itemsString = stringBuilder(itemsList);
+
+    console.log(itemsList);
+    console.log(stringBuilder(itemsList));
+
+    //Not currently used - for future API integration
+    // let json = JSON.stringify(newObject);
+    // console.dir(json);
+
+    window.open(
+      `mailto:enquiries@northremovals.co.uk
+        ?subject=${"Quote Enquiry"}
+        &body=%0D%0A
+        Name: ${newObject.name}%0D%0A
+        Phone: ${newObject.phone}%0D%0A
+        Email: ${newObject.email}%0D%0A%0D%0A
+        Moving Date: ${newObject.movingdate}%0D%0A
+        Moving From: ${newObject.movingfrom}%0D%0A
+        Moving To: ${newObject.movingto}%0D%0A
+        Property Type (From): ${newObject.fromPropertyType}%0D%0A
+        Property Type (To): ${newObject.toPropertyType}%0D%0A
+        Vehicle Access (From): ${newObject.fromAccess}%0D%0A
+        Vehicle Access (To): ${newObject.toAccess}%0D%0A%0D%0A%0D%0A
+        Total Cubic Feet: ${totalCubicFeet}%0D%0A
+        ${itemsString}
+        `,
+        '_blank'
+    );
+  }
 
   const sectionList = [...Array.from(new Set(itemCount.map(item => item.section)))];
   
