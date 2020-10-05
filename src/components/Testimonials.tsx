@@ -91,7 +91,7 @@ const Testimonials: FC = () => {
       updatedSeconds--;
       console.log("Updated Seconds: ", updatedSeconds);
     } else {
-      updatedSeconds = 5;
+      updatedSeconds = 10;
 
       if(updatedXPos === 66.6) {
         setXPos(33.3);

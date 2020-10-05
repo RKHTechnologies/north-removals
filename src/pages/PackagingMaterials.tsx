@@ -101,28 +101,28 @@ const PackagingMaterials: FC = () => {
       <GridContainer>
 
         <GridItem>
-          <Image image="box" />
+          <Image image="smallBox" />
           <Name>Small Box</Name>
           <Description>Dimensions 452 x 452 x 290mm approx</Description>
           <Price>1.00</Price>
         </GridItem>
 
         <GridItem>
-          <Image image="box" />
+          <Image image="mediumBox" />
           <Name>Medium Box</Name>
           <Description>Dimensions 550 x 400 x 350mm approx</Description>
           <Price>1.25</Price>
         </GridItem>
 
         <GridItem>
-          <Image image="box" />
+          <Image image="largeBox" />
           <Name>Large Box</Name>
           <Description>Dimensions 452 x 452 x 493mm approx</Description>
           <Price>1.50</Price>
         </GridItem>
 
         <GridItem>
-          <Image image="box" />
+          <Image image="wardrobeBox" />
           <Name>Wardrobe Box</Name>
           <Description>Dimensions 508 x 457 x 1220mm approx</Description>
           <Price>7.50</Price>
@@ -136,14 +136,14 @@ const PackagingMaterials: FC = () => {
         </GridItem>
 
         <GridItem>
-          <Image image="box" />
+          <Image image="boxTape" />
           <Name>Tape</Name>
           <Description>Priced per roll</Description>
           <Price>1.50</Price>
         </GridItem>
 
         <GridItem>
-          <Image image="box" />
+          <Image image="paper" />
           <Name>Packing Paper</Name>
           <Description>Priced per reem</Description>
           <Price>12.00</Price>

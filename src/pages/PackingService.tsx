@@ -32,7 +32,12 @@ const PackingService: FC = () => {
           <Description>
             Not enough time to pack your possessions? We can offer a full packing service to take the stress away, and get all your items packed and ready for your moving day.
             <br /><br />
-            Our professional packing tips:
+            Our packing service rates are competitive and flexible. We can work around your work life and home life to suit your needs. 
+            <br />
+            Please get in contact below to find out more
+            <br /><br />
+            <b>Our professional packing tips:</b>
+            <br /><br />
           </Description>
         </div>
       </Section>

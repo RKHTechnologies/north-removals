@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { colours, SharedSettings } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBoxes, faHandshake, faHourglassHalf, faTag, faPassport, faGift } from "@fortawesome/free-solid-svg-icons";
+import { faBoxes, faTasks, faHourglassHalf, faTag, faPassport, faGift } from "@fortawesome/free-solid-svg-icons";
 
 export const Grid = styled.div`
   width: 100%;
@@ -84,9 +84,9 @@ const PackingTips: FC = () => {
         </GridItem> 
 
         <GridItem>
-          <Icon icon={faHandshake} size="2x" />
-          <Title>Final Packing Tip?</Title>
-          <Description>...</Description>
+          <Icon icon={faTasks} size="2x" />
+          <Title>Final Checks</Title>
+          <Description>Make sure all areas are checked. Such as lofts, garages and sheds.</Description>
         </GridItem>
       </Grid>
     </>

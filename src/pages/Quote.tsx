@@ -272,6 +272,7 @@ const Quote: FC = () => {
     <Container> 
       <MainHeader>Get a Quote</MainHeader>
       <SubHeader>Please fill in the below, and we will get back to you as soon as possible</SubHeader>
+      <SubHeader>Or if you'd prefer - we can do it for you, with our home survey service. Contact today to book!</SubHeader>
       <FormContainer onSubmit={handleSubmit} id="quoteForm">
         <FormItem placeholder="Name" name="name" />
         <FormItem placeholder="Phone" name="phone" />
