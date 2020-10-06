@@ -17,7 +17,7 @@ const Container = styled.div`
 const ProductCards: FC = () => {
   return (
     <Container>
-      <Card image='homeMoves' primary='Home Moves' url="/quote" />
+      <Card image='homeMoves' primary='Home Removals' url="/quote" />
       <Card image='desk' primary='Office Removals' url="/quote" />
       <Card image='wrappedSofa' primary='Packing Service' url="/packing-service" />
       <Card image='box' primary='Packaging Materials' url="/packaging-materials" />

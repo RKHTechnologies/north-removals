@@ -194,8 +194,8 @@ const HeaderBar: React.FC<IProps> = ({ stickyHeader }: IProps) => {
                 <NavItemsRightContainer menuOpen={menuOpen}>
                     <HeaderButton onClick={() => handleNav("")}>Home</HeaderButton>
                     <HeaderButton onClick={() => handleNav("/quote")}>Get a Quote</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/quote")}>Home Moves</HeaderButton>
-                    <HeaderButton onClick={() => handleNav("/quote")}>Office Removals</HeaderButton>
+                    {/* <HeaderButton onClick={() => handleNav("/quote")}>Home Moves</HeaderButton>
+                    <HeaderButton onClick={() => handleNav("/quote")}>Office Removals</HeaderButton> */}
                     <HeaderButton onClick={() => handleNav("/packing-service")}>Packing Service</HeaderButton>
                     <HeaderButton onClick={() => handleNav("/packaging-materials")}>Packaging Materials</HeaderButton>
                     <HeaderButton onClick={() => handleNav("/contact-us")}>Contact Us</HeaderButton>
