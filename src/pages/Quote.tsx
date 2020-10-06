@@ -3,6 +3,7 @@ import { colours, SharedSettings } from '../Shared/SharedStyles';
 import styled from 'styled-components';
 import { SubmitButton } from '../components/Contact';
 import { initialState, IItemState } from '../initialItemState';
+import emailjs from 'emailjs-com';
 
 const Container = styled.div`
   background: ${colours.primary};
@@ -222,48 +223,49 @@ const Quote: FC = () => {
 
   const stringBuilder = (itemsList: Array<IItemState>) => {
     var lines: Array<string> = [];
-    itemsList.map(i => lines.push(`(${i.count}x) ${i.name}`));
-    return lines.join("");
+    itemsList.map(i => lines.push(`(${i.count}x) ${i.name} - ${i.cubicFeet * i.count}Ft`));
+    return lines.join("<br />");
   }
 
   
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const data = new FormData(event.target);
 
-    let newObject: any = {};
-    data.forEach((value, key) => {newObject[key] = value});
+    const formData = new FormData(event.target);
+
+    let data: any = {};
+    formData.forEach((value, key) => {data[key] = value});
 
     const itemsList = getItemsList();
     const totalCubicFeet = getTotalCubicFeet(itemsList);
     const itemsString = stringBuilder(itemsList);
 
-    console.log(itemsList);
-    console.log(stringBuilder(itemsList));
+    console.log("ItemsList: ", itemsList);
+    console.log("ItemsListString: ", stringBuilder(itemsList));
 
-    //Not currently used - for future API integration
-    // let json = JSON.stringify(newObject);
-    // console.dir(json);
+    const returnData = {
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      movingDate: data.movingDate,
+      movingFrom: data.movingFrom,
+      movingTo: data.movingTo,
+      fromPropertyType: data.fromPropertyType,
+      toPropertyType: data.toPropertyType,
+      fromAccess: data.fromAccess,
+      toAccess: data.toAccess,
+      cubicFeet: totalCubicFeet,
+      items: itemsString,
+    }
 
-    window.open(
-      `mailto:enquiries@northremovals.co.uk
-        ?subject=${"Quote Enquiry"}
-        &body=%0D%0A
-        Name: ${newObject.name}%0D%0A
-        Phone: ${newObject.phone}%0D%0A
-        Email: ${newObject.email}%0D%0A%0D%0A
-        Moving Date: ${newObject.movingdate}%0D%0A
-        Moving From: ${newObject.movingfrom}%0D%0A
-        Moving To: ${newObject.movingto}%0D%0A
-        Property Type (From): ${newObject.fromPropertyType}%0D%0A
-        Property Type (To): ${newObject.toPropertyType}%0D%0A
-        Vehicle Access (From): ${newObject.fromAccess}%0D%0A
-        Vehicle Access (To): ${newObject.toAccess}%0D%0A%0D%0A%0D%0A
-        Total Cubic Feet: ${totalCubicFeet}%0D%0A
-        ${itemsString}
-        `,
-        '_blank'
-    );
+    emailjs.send('gmail', 'defaultTemplate', returnData, 'user_qVvmKovzsj8m5O2fySEw6')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+    event.target.reset();
   }
 
   const sectionList = [...Array.from(new Set(itemCount.map(item => item.section)))];
@@ -277,9 +279,9 @@ const Quote: FC = () => {
         <FormItem placeholder="Name" name="name" />
         <FormItem placeholder="Phone" name="phone" />
         <FormItem placeholder="Email" name="email" />
-        <FormItem placeholder="Moving Date" name="movingdate" />
-        <FormItem placeholder="Moving From" name="movingfrom" />
-        <FormItem placeholder="Moving To" name="movingto" />
+        <FormItem placeholder="Moving Date" name="movingDate" />
+        <FormItem placeholder="Moving From" name="movingFrom" />
+        <FormItem placeholder="Moving To" name="movingTo" />
         <FormDropdown name="fromPropertyType" required>
           <option value="" selected disabled hidden>Property Type (From)</option>
           <option value="Flat">Flat</option>
