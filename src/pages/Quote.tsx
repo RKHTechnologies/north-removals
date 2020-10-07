@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { SubmitButton } from '../components/Contact';
 import { initialState, IItemState } from '../initialItemState';
 import emailjs from 'emailjs-com';
+import InfoOverlay from '../components/InfoOverlay';
 
 const Container = styled.div`
   background: ${colours.primary};
@@ -190,6 +191,8 @@ const Quote: FC = () => {
 
   const [volumeCount, setVolumeCount] = useState(0);
   const [itemCount, setItemCount] = useState(initialState);
+  const [overlayOpen, setOverlayOpen] = useState(false);
+  const [overlayText, setOverlayText] = useState("");
 
   const updateItemCount = (itemId: number, increment: boolean) => {
     let nextState: any, cubicFeet: any;
@@ -261,8 +264,12 @@ const Quote: FC = () => {
     emailjs.send('gmail', 'defaultTemplate', returnData, 'user_qVvmKovzsj8m5O2fySEw6')
       .then((result) => {
           console.log(result.text);
+          setOverlayOpen(true);
+          setOverlayText("Form Successfully submitted, we will be in touch as soon as possible")
       }, (error) => {
           console.log(error.text);
+          setOverlayOpen(true);
+          setOverlayText("Oops, an error occured. Please try again later, or contact us if the issue persists.")
       });
 
     event.target.reset();
@@ -324,6 +331,7 @@ const Quote: FC = () => {
         </>
       ))}
       <Submit type="submit" value="SUBMIT" form="quoteForm" />
+      <InfoOverlay open={overlayOpen} close={() => setOverlayOpen(false)} text={overlayText} />
     </Container>
   );
 }

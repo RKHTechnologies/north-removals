@@ -89,7 +89,6 @@ const Testimonials: FC = () => {
   const updateTime = () => {
     if (updatedSeconds > 0) {
       updatedSeconds--;
-      console.log("Updated Seconds: ", updatedSeconds);
     } else {
       updatedSeconds = 10;
 

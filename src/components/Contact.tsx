@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { colours, SharedSettings } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
+import emailjs from 'emailjs-com';
+import InfoOverlay from "./InfoOverlay";
 
 
 interface sectionProps {
@@ -194,29 +196,37 @@ const Icon = styled(FontAwesomeIcon)`
 
 
 const Contact: React.FC = () => {
+  const [overlayOpen, setOverlayOpen] = useState(false);
+  const [overlayText, setOverlayText] = useState("");
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const data = new FormData(event.target);
+    
+    const formData = new FormData(event.target);
 
-    let newObject: any = {};
-    data.forEach((value, key) => {newObject[key] = value});
+    let data: any = {};
+    formData.forEach((value, key) => {data[key] = value});
 
-    //Not currently used - for future API integration
-    let json = JSON.stringify(newObject);
-    console.dir(json);
+    const returnData = {
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    }
 
-    window.open(
-      `mailto:enquiries@northremovals.co.uk
-        ?subject=${newObject.subject}
-        &body=%0D%0A
-        Name: ${newObject.name}%0D%0A
-        Phone: ${newObject.phone}%0D%0A
-        Email: ${newObject.email}%0D%0A%0D%0A
-        Subject: ${newObject.subject}%0D%0A
-        Message: ${newObject.message}`,
-        '_blank'
-    );
+    emailjs.send('gmail', 'NR_Contact', returnData, 'user_qVvmKovzsj8m5O2fySEw6')
+      .then((result) => {
+          console.log(result.text);
+          setOverlayOpen(true);
+          setOverlayText("Form Successfully submitted! We will be in touch as soon as possible")
+      }, (error) => {
+          console.log(error.text);
+          setOverlayOpen(true);
+          setOverlayText("Oops, an error occured. Please try again later, or contact us if the issue persists.")
+      });
+
+    event.target.reset();
   }
 
   return (
@@ -259,6 +269,7 @@ const Contact: React.FC = () => {
           </FormContainer>
 
         </Container>
+        <InfoOverlay open={overlayOpen} close={() => setOverlayOpen(false)} text={overlayText} />
     </Section>
   );
 };
