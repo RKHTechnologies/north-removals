@@ -19,7 +19,7 @@ function App() {
         <ScrollToTop />
         <Header />
         <Switch>
-          <Route exact path={`${process.env.PUBLIC_URL}`} component={Home} />
+          <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
           <Route exact path={`${process.env.PUBLIC_URL}/quote`} component={Quote} />
           <Route exact path={`${process.env.PUBLIC_URL}/packaging-materials`} component={PackagingMaterials} />
           <Route exact path={`${process.env.PUBLIC_URL}/packing-service`} component={PackingService} />
