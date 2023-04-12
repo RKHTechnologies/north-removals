@@ -1,14 +1,13 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
-import Images, { imageLib } from '../Shared/ImageLib';
-import { colours } from '../Shared/SharedStyles';
-import { useHistory } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
+import React, { FC } from "react";
+import styled from "styled-components";
+import Images, { imageLib } from "../Shared/ImageLib";
+import { colours } from "../Shared/SharedStyles";
+import { useHistory } from "react-router-dom";
 
 interface IProps {
   image: imageLib;
   primary: string;
-  url: string
+  url: string;
 }
 
 interface IContainerProps {
@@ -30,7 +29,7 @@ const CardContainer = styled.div`
   cursor: pointer;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -66,18 +65,20 @@ const PrimaryText = styled.div`
 //   font-size: 1.1em;
 // `;
 
-
-const Card: FC<IProps> = ({image, primary, url}: IProps) => {
+const Card: FC<IProps> = ({ image, primary, url }: IProps) => {
   const history = useHistory();
-  
+
   return (
     <>
-      <CardContainer image={image} onClick={() => history.push(`${process.env.PUBLIC_URL}${url}`)}>
+      <CardContainer
+        image={image}
+        onClick={() => history.push(`${process.env.PUBLIC_URL}${url}`)}
+      >
         <PrimaryText>{primary}</PrimaryText>
         {/* <SecondaryText>Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu.</SecondaryText> */}
       </CardContainer>
     </>
   );
-}
+};
 
 export default Card;
