@@ -61,7 +61,7 @@ const About: FC = () => {
   return (
     <>
       <TitleSection>
-        We are a family run removals company with over 10 years experince. We take pride in offering a professional and reliable services with competitive rates. Let us take the stress out of your moving day and do the heavy lifting for you.
+        We are a family run removals company with over 10 years experience. We take pride in offering a professional and reliable services with competitive rates. Let us take the stress out of your moving day and do the heavy lifting for you.
       </TitleSection>
       <Grid>
         <GridItem>

@@ -34,9 +34,12 @@ const FooterContainer = styled.footer`
 `;
 
 const Footer: FC = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  
   return (
     <FooterContainer>
-      <p>Copyright © 2020 North Removals. All rights reserved.</p>
+      <p>Copyright © {year} North Removals. All rights reserved.</p>
       <div>Site built by RKH Technologies</div>
     </FooterContainer>
   );

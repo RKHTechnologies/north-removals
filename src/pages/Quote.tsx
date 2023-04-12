@@ -293,6 +293,7 @@ const Quote: FC = () => {
           <option value="" selected disabled hidden>Property Type (From)</option>
           <option value="Flat">Flat</option>
           <option value="House">House</option>
+          <option value="ThreeStory">3 Story +</option>
           <option value="Bungalow">Bungalow</option>
           <option value="Office">Office</option>
         </FormDropdown>
@@ -300,6 +301,7 @@ const Quote: FC = () => {
           <option value="" selected disabled hidden>Property Type (To)</option>
           <option value="Flat">Flat</option>
           <option value="House">House</option>
+          <option value="ThreeStory">3 Story +</option>
           <option value="Bungalow">Bungalow</option>
           <option value="Office">Office</option>
         </FormDropdown>
